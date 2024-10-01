@@ -5,8 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinesh Bhathad</title>
+    <a href="#top" id="fab"><i class="fas fa-arrow-up"></i></a>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bruno+Ace+SC&family=Bungee+Hairline&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&display=swap');
+
+        #fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: black;
+            color: #00ffcc;
+            border-radius: 50%;
+            border: 2px solid #00ffcc;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+                z-index: 9999;
+        }
+
+            #fab:hover {
+                background-color: #008080;
+            }
+
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
 
         html,
         body {
@@ -67,6 +101,7 @@
                     font-size: 1.4em;
                 }
 
+
         nav {
             margin-top: 10px;
         }
@@ -84,6 +119,7 @@
                     text-shadow: 0 0 10px #00ffcc;
                 }
 
+        
         .container {
             width: 100%;
             /* Changed from 80% to 100% */
@@ -132,16 +168,16 @@
         .bio-content {
             display: flex;
             align-items: center;
-        }
-
-        .bio-text {
-            flex: 1;
+            
         }
 
         .bio-image {
             flex: 1;
             display: flex;
             justify-content: center;
+            padding-right: 145px;
+            padding-left: 145px;
+            perspective: 1000px; /* Required for the 3D effect */
         }
 
             .bio-image img {
@@ -151,6 +187,8 @@
                 object-fit: cover;
                 border: 2px solid #00ffcc;
                 animation: borderGrow 1s ease-in-out;
+                transition: transform 0.5s ease-out;
+                transform-style: preserve-3d; /* Ensures the 3D effect is applied */
             }
 
         @keyframes borderGrow {
@@ -213,6 +251,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 255, 204, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.1px solid #00ffcc;
         }
 
             .highlight-item:hover,
@@ -281,6 +320,7 @@
             border-radius: 8px;
             position: relative;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
+            border: 0.1px solid #00ffcc;
         }
 
             .skills .skill-category:hover {
@@ -290,6 +330,7 @@
 
             .skills .skill-category h3 {
                 font-size: 1.5em;
+                margin-top: 1px;
                 margin-bottom: 15px;
                 color: #00ffcc;
             }
@@ -329,11 +370,11 @@
         }
 
             .skills .skills-list .skill {
-                background-color: #000;
+                background-color: #1a1a1a;
                 border: 2px solid #00ffcc;
                 border-radius: 12px;
-                padding: 10px 15px;
-                font-size: 1.1em;
+                padding: 5px 5px;
+                font-size: 1em;
                 color: #00ffcc;
                 text-align: center;
                 /*cursor: pointer;*/
@@ -447,6 +488,7 @@
     </style>
 </head>
 <body>
+   
     <!-- <audio id="intro-sound"><source src="intro.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
       </audio><audio id="tap-sound"><source src="tap.mp3" type="audio/mpeg">
@@ -469,6 +511,8 @@
             <a href="#courses-certifications">Certifications</a>
 
             <a href="#contact">Contact</a>
+
+            
             <!-- <a>
         <span class="toggle-vibes" id="toggle-vibes">Enable Vibes
     </a>
@@ -476,49 +520,70 @@
 </header>
     </nav>
     <div class="container">
+
         <div class="bio" id="about-me">
-            
+
             <h2>ABOUT ME</h2>
+            <div data-aos="zoom-in" ;
             <div class="bio-content">
+
                 <div class="bio-image">
-                    <img src="Me.jpg" alt="Your Headshot">
+
+                    <img src="Me.jpg" alt="Your Headshot" id="bioImage">
                 </div>
+
                 <div class="bio-text">
-                    <h2>Hi, I am Dinesh.</h2>
+                    <h2 id="typewriter"></h2>
+                    <script>const text = "Hi, I am Dinesh.";
+                        let index = 0;
+                        function type() {
+                            if (index < text.length) {
+                                document.getElementById('typewriter').innerHTML += text.charAt(index);
+                                index++;
+                                setTimeout(type, 100);
+                            }
+                        }
+                        type();</script>
                     <p>I'm an XR enthusiast, researcher and developer.</p>
                     <p>I'm currently pursuing my Master's in Human Computer Interaction at Indiana University.</p>
                     <p>My current focus lies on improving mental and physical healthcare with XR.</p>
                     <p>I also find myself playing around with ideas of new interaction devices, working on my own HCI projects by drawing inspiration from sci-fi.</p>
                 </div>
+
             </div>
         </div>
-        <div class="highlights" id="highlights">
-            <h2>HIGHLIGHTS</h2>
-            <div class="highlight-items">
-                <div class="highlight-item">
-                    <h3>
-                        <a href="https://www.linkedin.com/posts/db1713_im-happy-to-announce-that-our-project-virtual-activity-6952240695000608768-cF5q?utm_source=share&utm_medium=member_desktop" target="_blank">
-                            Certification of Merit <span class="icon">↗</span>
-                        </a>
-                    </h3>
-                    <p>Secured the second place prize for my undergrad capstone project "VR Based Stroke Rehabilitation"</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>
-                        <a href="https://ieeexplore.ieee.org/document/10370558" target="_blank">
-                            Published my First Paper <span class="icon">↗</span>
-                        </a>
-                    </h3>
-                    <p>My undergrad capstone project's potential allowed me to turn it into a publication! As someone who did this for fun, this was my first stepping stone into the world of research work!</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>
-                        <a href="https://db1713.github.io/db/" target="_blank">Cumulative experience of 3+ years</a>
-                    </h3>
-                    <p>I have an experience of 1.5 years of experience as XR intern and over 2 years of experience as developer (Cryenx Labs, India) and research assistant (I3D Lab, IISc, India)</p>
+            <div data-aos="zoom-in" ;
+            <div class="highlights" id="highlights">
+                <h2>HIGHLIGHTS</h2>
+                <div class="highlight-items">
+                    <div class="highlight-item">
+                        <h3>
+                            <a href="https://www.linkedin.com/posts/db1713_im-happy-to-announce-that-our-project-virtual-activity-6952240695000608768-cF5q?utm_source=share&utm_medium=member_desktop" target="_blank">
+                                Certification of Merit <span class="icon">↗</span>
+                            </a>
+                        </h3>
+                        <p>Secured the second place prize for my undergrad capstone project "VR Based Stroke Rehabilitation"</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>
+                            <a href="https://ieeexplore.ieee.org/document/10370558" target="_blank">
+                                Published my First Paper <span class="icon">↗</span>
+                            </a>
+                        </h3>
+                        <p>My undergrad capstone project's potential allowed me to turn it into a publication! As someone who did this for fun, this was my first stepping stone into the world of research work!</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>
+                            <a href="https://db1713.github.io/db/" target="_blank">Cumulative experience of 3+ years</a>
+                        </h3>
+                        <p>I have an experience of 1.5 years of experience as XR intern and over 2 years of experience as developer (Cryenx Labs, India) and research assistant (I3D Lab, IISc, India)</p>
+                    </div>
+
+                   
                 </div>
             </div>
-        </div>
+
+            <div data-aos="zoom-in" ;
         <div class="projects" id="projects">
             <h2>PROJECTS</h2>
             <div class="project-item">
@@ -676,58 +741,70 @@
                         </div>
                         <p>Tap to see less.</p>
                     </div>
-                </div>
+
+                 </div>
             </div>
         </div>
-        <div class="skills" id="skills">
-            <h2>SKILLS</h2>
-            <!-- Development Skills -->
-            <div class="skills">
-                <!-- Development Skills -->
-                <div class="skill-category">
-                    <h3>Development</h3>
-                    <div class="skill-bar" data-skill-level="90">
-                        <div class="skill-bar-inner"></div>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill">Unity</div>
-                        <div class="skill">C#</div>
-                        <div class="skill">Various HMDs</div>
-                        <div class="skill">Haptic Devices</div>
-                        <div class="skill">Rapid Prototyping</div>
-                        <!-- Add more skills as needed -->
-                    </div>
-                </div>
-                <!-- UX Skills -->
-                <div class="skill-category">
-                    <h3>UX</h3>
-                    <div class="skill-bar" data-skill-level="85">
-                        <div class="skill-bar-inner"></div>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill">UX Research</div>
-                        <div class="skill">User Research</div>
-                        <div class="skill">Quantitative & Qualitative Analysis</div>
-                        <div class="skill">Interaction Design</div>
-                        <!-- Add more skills as needed -->
-                    </div>
-                </div>
-                <!-- Miscellaneous Skills -->
-                <div class="skill-category">
-                    <h3>Miscellaneous</h3>
-                    <div class="skill-bar" data-skill-level="80">
-                        <div class="skill-bar-inner"></div>
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill">Agile & Lean UX</div>
-                        <div class="skill">UI Design</div>
-                        <div class="skill">Design Thinking</div>
-                        <div class="skill">HCI</div>
-                        <!-- Add more skills as needed -->
-                    </div>
-                </div>
+       <div class="skills" id="skills">
+    <h2>SKILLS</h2>
+    <!-- Development Skills -->
+    <div class="skills">
+        <!-- UX Skills -->
+        <div class="skill-category">
+            <h3>Design</h3>
+            <!--<div class="skill-bar" data-skill-level="85">
+                <div class="skill-bar-inner"></div>
+            </div>-->
+            <div class="skills-list">
+                <div class="skill">UX Research</div>
+                <div class="skill">User Research</div>
+                <div class="skill">Quantitative & Qualitative Data Analysis</div>
+                <div class="skill">Interaction Design</div>
+                <div class="skill">Usability Testing</div>
+                <div class="skill">Accessibility Compliance (WCAG)</div>
+                <div class="skill">User-Centered Design (UCD)</div>
+                <div class="skill">Heuristic Evaluation</div>
+                <div class="skill">Ethnographic Research</div>
+                <div class="skill">A/B Testing</div>
+                <div class="skill">Surveys & Interviews</div>
+                <div class="skill">Task Analysis</div>
+                <div class="skill">Design Thinking</div>
+                <div class="skill">Agile & Lean UX Methodologies</div>
+                <div class="skill">User Interface (UI) Design</div>
+                <div class="skill">Human-Computer Interaction (HCI)</div>
+                <!-- Add more skills as needed -->
             </div>
         </div>
+        <!-- Development Skills -->
+        <div class="skill-category">
+            <h3>Development</h3>
+            <!--<div class="skill-bar" data-skill-level="90">
+                <div class="skill-bar-inner"></div>
+            </div>-->
+            <div class="skills-list">
+                <div class="skill">Unity</div>
+                <div class="skill">C#</div>
+                <div class="skill">Various HMDs (Head-Mounted Displays)</div>
+                <div class="skill">Haptic Devices</div>
+                <div class="skill">Rapid Prototyping</div>
+                <div class="skill">AR/VR Development</div>
+                <div class="skill">XR Development</div>
+                <div class="skill">Game Design</div>
+                <div class="skill">3D Modeling</div>
+                <div class="skill">VR Interaction Design</div>
+                <div class="skill">Physics Simulation</div>
+                <div class="skill">Spatial Audio Integration</div>
+                <div class="skill">Performance Optimization</div>
+                <div class="skill">Animation Systems</div>
+                <div class="skill">Interaction Design for Immersive Environments</div>
+                <!-- Add more skills as needed -->
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
         <div class="experience">
             <h2>
                 FULL-TIME EXPERIENCE <p style="text-align: right;font-size: 0.5em;">
@@ -884,91 +961,119 @@
                     <i class="fab fa-github"></i> GitHub
                 </a>
             </p>
-        </div>
-    </div>
-    <footer> &copy; 2024 Dinesh Bhathad. All rights reserved. </footer>
-    <script>document.addEventListener("DOMContentLoaded", function () {
-            const skillBars = document.querySelectorAll('.skill-bar-inner');
-            const swooshSound = document.getElementById('swoosh-sound');
-            const introSound = document.getElementById('intro-sound');
-            const tapSound = document.getElementById('tap-sound');
-            const scrollSound = document.getElementById('scroll-sound');
-            // Set all skill bars to an initial width of 0
-            skillBars.forEach(skillBar => {
-                skillBar.style.width = '0%';
-            });
-            const playSwooshSound = () => {
-                swooshSound.currentTime = 0;
-                swooshSound.play().catch(error => {
-                    console.log('Error playing swoosh sound:', error);
-                });
-            };
-            const playTapSound = () => {
-                tapSound.currentTime = 0;
-                tapSound.play().catch(error => {
-                    console.log('Error playing tap sound:', error);
-                });
-            };
-            const playScrollSound = () => {
-                scrollSound.currentTime = 0;
-                scrollSound.play().catch(error => {
-                    console.log('Error playing scroll sound:', error);
-                });
-            };
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const skillBar = entry.target.querySelector('.skill-bar-inner');
-                        const skillLevel = entry.target.getAttribute('data-skill-level');
-                        skillBar.style.width = skillLevel + '%';
-                        observer.unobserve(entry.target); // Stop observing once animation is triggered
-                        playSwooshSound();
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            // Observe each skill bar container
-            document.querySelectorAll('.skill-bar').forEach(skill => {
-                observer.observe(skill);
-            });
-            const projectItems = document.querySelectorAll('.project-item');
-            projectItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    item.classList.toggle('expanded');
 
-                    if (!item.classList.contains('expanded')) {
-                        item.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center' // Ensures the item scrolls to the center of the viewport
+        </div>
+        </div>
+        </div>
+            <footer> &copy; 2024 Dinesh Bhathad. All rights reserved. </footer>
+
+
+            <script>AOS.init();
+                
+                document.addEventListener("DOMContentLoaded", function () {
+                    const skillBars = document.querySelectorAll('.skill-bar-inner');
+                    const swooshSound = document.getElementById('swoosh-sound');
+                    const introSound = document.getElementById('intro-sound');
+                    const tapSound = document.getElementById('tap-sound');
+                    const scrollSound = document.getElementById('scroll-sound');
+
+                    const bioImage = document.getElementById('bioImage');
+                    const container = document.querySelector('.bio-image');
+                    container.addEventListener('mousemove', (event) => {
+                        const containerRect = container.getBoundingClientRect();
+                        const xAxis = (containerRect.width / 2 + event.clientX + containerRect.left) / 5;
+                        const yAxis = (containerRect.height / 2 - event.clientY + containerRect.top) / 5;
+
+                        bioImage.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+                    });
+
+                    container.addEventListener('mouseleave', () => {
+                        bioImage.style.transform = 'rotateY(0deg) rotateX(0deg)';
+                    });
+
+
+
+
+
+
+                    // Set all skill bars to an initial width of 0
+                    skillBars.forEach(skillBar => {
+                        skillBar.style.width = '0%';
+                    });
+                    const playSwooshSound = () => {
+                        swooshSound.currentTime = 0;
+                        swooshSound.play().catch(error => {
+                            console.log('Error playing swoosh sound:', error);
                         });
-                    }
-                });
-            });
-            const toggleVibes = document.getElementById('toggle-vibes');
-            toggleVibes.addEventListener('click', function () {
-                introSound.play().catch(error => {
-                    console.log('Error playing intro sound:', error);
-                });
-                toggleVibes.style.display = 'none';
-            });
-            document.querySelectorAll('a, .project-item').forEach(element => {
-                element.addEventListener('click', playTapSound);
-            });
-            let isScrolling;
-            window.addEventListener('scroll', function () {
-                if (!scrollSound.paused) {
-                    scrollSound.currentTime = 0; // Loop the sound
-                } else {
-                    playScrollSound();
-                }
-                window.clearTimeout(isScrolling);
-                isScrolling = setTimeout(function () {
-                    // Scrolling has stopped
-                    scrollSound.pause();
-                    scrollSound.currentTime = 0; // Reset the sound
-                }, 100);
-            });
-        });</script>
+                    };
+                    const playTapSound = () => {
+                        tapSound.currentTime = 0;
+                        tapSound.play().catch(error => {
+                            console.log('Error playing tap sound:', error);
+                        });
+                    };
+                    const playScrollSound = () => {
+                        scrollSound.currentTime = 0;
+                        scrollSound.play().catch(error => {
+                            console.log('Error playing scroll sound:', error);
+                        });
+                    };
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const skillBar = entry.target.querySelector('.skill-bar-inner');
+                                const skillLevel = entry.target.getAttribute('data-skill-level');
+                                skillBar.style.width = skillLevel + '%';
+                                observer.unobserve(entry.target); // Stop observing once animation is triggered
+                                playSwooshSound();
+                            }
+                        });
+                    }, {
+                        threshold: 0.1
+                    });
+                    // Observe each skill bar container
+                    document.querySelectorAll('.skill-bar').forEach(skill => {
+                        observer.observe(skill);
+                    });
+                    const projectItems = document.querySelectorAll('.project-item');
+                    projectItems.forEach(item => {
+                        item.addEventListener('click', () => {
+                            item.classList.toggle('expanded');
+
+                            if (!item.classList.contains('expanded')) {
+                                item.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'center' // Ensures the item scrolls to the center of the viewport
+                                });
+                            }
+                        });
+                    });
+                    const toggleVibes = document.getElementById('toggle-vibes');
+                    toggleVibes.addEventListener('click', function () {
+                        introSound.play().catch(error => {
+                            console.log('Error playing intro sound:', error);
+                        });
+                        toggleVibes.style.display = 'none';
+                    });
+                    document.querySelectorAll('a, .project-item').forEach(element => {
+                        element.addEventListener('click', playTapSound);
+                    });
+                    let isScrolling;
+                    window.addEventListener('scroll', function () {
+                        if (!scrollSound.paused) {
+                            scrollSound.currentTime = 0; // Loop the sound
+                        } else {
+                            playScrollSound();
+                        }
+                        window.clearTimeout(isScrolling);
+                        isScrolling = setTimeout(function () {
+                            // Scrolling has stopped
+                            scrollSound.pause();
+                            scrollSound.currentTime = 0; // Reset the sound
+                        }, 100);
+
+
+                    });
+                });</script>
 </body>
 </html>
