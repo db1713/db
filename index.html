@@ -22,10 +22,10 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: black;
-            color: #00ffcc;
+            background-color: white;
+            color: black;
             border-radius: 50%;
-            border: 2px solid #00ffcc;
+            border: 2px solid black;
             width: 50px;
             height: 50px;
             display: flex;
@@ -39,7 +39,7 @@
         }
 
             #fab:hover {
-                background-color: #008080;
+                background-color: grey;
             }
 
         html {
@@ -65,8 +65,8 @@
 
         body {
             font-family: 'Chakra Petch', sans-serif;
-            background-color: #0d0d0d;
-            color: #00ffcc;
+            background-color:white;
+            color: black;
             overflow-x: hidden;
             font-size: 18px;
             letter-spacing: 0.05em;
@@ -76,8 +76,8 @@
 
         header {
             /*background-color: #1a1a1a;*/
-            background-color: #1a1a1a;
-            color: #00ffcc;
+            background-color: white;
+            color: white;
             padding: 12px;
             text-align: center;
             position: fixed;
@@ -87,13 +87,15 @@
         }
 
             header h1 {
+               color: black;
                 margin: 0;
                 font-size: 3em;
-                text-shadow: 0 0 0px #00ffcc, 0 0 0px #00ffcc, 0 0 0px #00ffcc;
+                text-shadow: 0 0 0px #0d0d0d, 0 0 0px #0d0d0d, 0 0 0px #0d0d0d;
                 transition: font-size 0.3s ease;
             }
 
                 header h1:hover {
+                    color: black;
                     font-size: 3.5em;
                 }
 
@@ -112,7 +114,7 @@
         }
 
             nav a {
-                color: #00ffcc;
+                color: black;
                 margin: 0 10px;
                 text-decoration: none;
                 font-size: 1.8em;
@@ -120,8 +122,8 @@
 
                 nav a:hover {
                     font-size: 3em;
-                    color: #fff;
-                    text-shadow: 0 0 10px #00ffcc;
+                    color: black;
+                    text-shadow: 0 0 10px #fff;
                 }
 
         .container {
@@ -154,6 +156,7 @@
             .experience h2,
             .courses h2,
             .certifications h2 {
+                color: black;
                 text-align: left;
                 transition: font-size 0.3s ease;
             }
@@ -189,7 +192,7 @@
                 width: 300px;
                 height: 300px;
                 object-fit: cover;
-                border: 2px solid #00ffcc;
+                border: 2px solid #0d0d0d;
                 animation: borderGrow 1s ease-in-out;
                 transition: transform 0.5s ease-out;
                 transform-style: preserve-3d;
@@ -250,13 +253,13 @@
         .experience-item,
         .course-item,
         .certification-item {
-            background-color: #1a1a1a;
+            background-color: white;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 255, 204, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 0.1px solid #00ffcc;
+            border: 0.1px solid #0d0d0d;
         }
 
             .highlight-item:hover,
@@ -265,7 +268,7 @@
             .course-item:hover,
             .certification-item:hover {
                 transform: translateY(-10px);
-                box-shadow: 0 4px 15px rgba(0, 255, 204, 0.4);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
             }
 
         .highlight-item {
@@ -320,16 +323,16 @@
         .skills .skill-category {
             margin-bottom: 30px;
             margin-top: 10px;
-            background-color: #1a1a1a;
+            background-color: white;
             padding: 30px;
             border-radius: 8px;
             position: relative;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
-            border: 0.1px solid #00ffcc;
+            border: 0.1px solid #0d0d0d;
         }
 
             .skills .skill-category:hover {
-                box-shadow: 0 4px 15px rgba(0, 255, 204, 0.4);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
                 transform: translateY(-10px);
             }
 
@@ -337,7 +340,7 @@
                 font-size: 1.5em;
                 margin-top: 1px;
                 margin-bottom: 15px;
-                color: #00ffcc;
+                color: black;
             }
 
             .skills .skill-category .skill-bar {
@@ -375,12 +378,12 @@
         }
 
             .skills .skills-list .skill {
-                background-color: #1a1a1a;
-                border: 2px solid #00ffcc;
+                background-color: white;
+                border: 2px solid #0d0d0d;
                 border-radius: 12px;
                 padding: 5px 20px;
                 font-size: 1em;
-                color: #00ffcc;
+                color: black;
                 text-align: center;
                 /*cursor: pointer;*/
                 cursor: default;
@@ -422,8 +425,8 @@
         }
 
         footer {
-            background-color: #1a1a1a;
-            color: #00ffcc;
+            background-color: white;
+            color: black;
             text-align: center;
             padding: 10px;
             width: 100%;
@@ -431,13 +434,13 @@
         }
 
         a {
-            color: #00ffcc;
+            color: black;
             text-decoration: none;
         }
 
             a:hover {
-                color: #fff;
-                text-shadow: 0 0 10px #00ffcc;
+                color: black;
+                text-shadow: 0 0 10px #808080;
             }
 
         @media (max-width: 768px) {
