@@ -8,12 +8,19 @@
     <a href="#top" id="fab">
         <i class="fas fa-arrow-up"></i>
     </a>
-   
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bruno+Ace+SC&family=Bungee+Hairline&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&display=swap');
 
+        canvas {
+            display: block ;
+            position:absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Canvas behind the panels */
+        }
 
 
 
@@ -65,7 +72,7 @@
 
         body {
             font-family: 'Chakra Petch', sans-serif;
-            background-color:white;
+            background-color: white;
             color: black;
             overflow-x: hidden;
             font-size: 18px;
@@ -76,7 +83,8 @@
 
         header {
             /*background-color: #1a1a1a;*/
-            background-color: white;
+            
+            background-color: rgba(255,255,255, 0.7);
             color: white;
             padding: 12px;
             text-align: center;
@@ -87,7 +95,7 @@
         }
 
             header h1 {
-               color: black;
+                color: black;
                 margin: 0;
                 font-size: 3em;
                 text-shadow: 0 0 0px #0d0d0d, 0 0 0px #0d0d0d, 0 0 0px #0d0d0d;
@@ -239,6 +247,7 @@
             .course-item p:hover,
             .certification-item h3:hover,
             .certification-item p:hover {
+
                 font-size: 1.2em;
             }
 
@@ -248,12 +257,15 @@
             flex-wrap: wrap;
         }
 
+        
         .highlight-item,
         .project-item,
         .experience-item,
         .course-item,
         .certification-item {
-            background-color: white;
+            backdrop-filter: blur(5px);
+            background-color: rgba(255,255,255, 0.1);
+           
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
@@ -262,6 +274,7 @@
             border: 0.1px solid #0d0d0d;
         }
 
+            
             .highlight-item:hover,
             .project-item:hover,
             .experience-item:hover,
@@ -321,9 +334,11 @@
         }
 
         .skills .skill-category {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255,255,255, 0.1);
             margin-bottom: 30px;
             margin-top: 10px;
-            background-color: white;
+           
             padding: 30px;
             border-radius: 8px;
             position: relative;
@@ -425,7 +440,7 @@
         }
 
         footer {
-            background-color: white;
+            background-color: rgba(255,255,255, 0);
             color: black;
             text-align: center;
             padding: 10px;
@@ -440,7 +455,7 @@
 
             a:hover {
                 color: black;
-                text-shadow: 0 0 10px #808080;
+               /* text-shadow: 0 0 10px #808080;*/
             }
 
         @media (max-width: 768px) {
@@ -496,16 +511,20 @@
     </style>
 </head>
 <body>
-   
-    <audio id="intro-sound"><source src="intro.mp3" type="audio/mpeg">
+    <canvas id="particleCanvas"></canvas>
+
+    <audio id="intro-sound">
+        <source src="intro.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-    </audio><audio id="tap-sound"><source src="tap.mp3" type="audio/mpeg">
+    </audio><audio id="tap-sound">
+        <source src="tap.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-    <!--</audio><audio id="swoosh-sound"><source src="swoosh.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.-->
-    </audio><audio id="scroll-sound"><source src="ticklong.mp3" type="audio/mpeg">
+        <!--</audio><audio id="swoosh-sound"><source src="swoosh.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.-->
+    </audio><audio id="scroll-sound">
+        <source src="ticklong.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-    </audio> 
+    </audio>
     <header>
         <nav>
             <!--<a href="#about-me">About Me</a>-->
@@ -514,8 +533,13 @@
             <a href="#skills">Skills</a>
             <a href="#exp">Exp</a>
             <a href="https://www.linkedin.com/in/db1713/" target="_blank">
-                <i class="fab fa-linkedin"></i> 
+                <i class="fab fa-linkedin"></i>
             </a>
+            
+                <a href="https://flowcv.com/resume/mbsbmhektf" target="_blank">
+                    <i class="fas fa-file-pdf"></i>
+                </a>
+            
             <!--<a href="#courses-certifications">Certifications</a>-->
             <!--<a href="#contact">Contact</a>-->
             <!--<a><span class="toggle-vibes" id="toggle-vibes">Enable Vibes
@@ -524,57 +548,78 @@
     </nav>
     <div class="container">
         <div class="bio" id="about-me">
-            <h2>ABOUT ME</h2>
+            <h2 >ABOUT ME</h2>
             <div data-aos="zoom-in" ; <div class="bio-content">
 					<div class="bio-image">
 						<img src="Me.jpg" alt="Your Headshot" id="bioImage">
 					</div>
-					<div class="bio-text">
-						<h2 id="typewriter"></h2>
-						<script>
-							const text = "Hi, I am Dinesh.";
-							let index = 0;
+                    <div class="bio-text">
+                        <h2 style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: center; border-radius: 8px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); " id="typewriter"></h2>
+                        <script>const text = "Hi, I am Dinesh.";
+                            let index = 0;
 
-							function type() {
-								if (index < text.length) {
-									document.getElementById('typewriter').innerHTML += text.charAt(index);
-									index++;
-									setTimeout(type, 100);
-								}
-							}
-							type();
-						</script>
-						<p>I'm an XR enthusiast, researcher and developer.</p>
-						<p>I'm currently pursuing my Master's in Human Computer Interaction at Indiana University.</p>
-						<p>My current focus lies on improving mental and physical healthcare with XR.</p>
-						<p>I also find myself playing around with ideas of new interaction devices, working on my own HCI projects by drawing inspiration from sci-fi.</p>
-					</div>
+                            function type() {
+                                if (index < text.length) {
+                                    document.getElementById('typewriter').innerHTML += text.charAt(index);
+                                    index++;
+                                    setTimeout(type, 100);
+                                }
+                            }
+                            type();</script>
+                        <p style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: justify; border-radius: 8px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+                            I'm an XR enthusiast, researcher and developer.<br><br>
+                            I'm currently pursuing my Master's in Human Computer Interaction at Indiana University.<br><br>
+                            My current focus lies on improving mental and physical healthcare with XR.<br><br>
+                            I also find myself playing around with ideas of new interaction devices, working on my own HCI projects by drawing inspiration from sci-fi.
+                        </p>
+
+
+                    </div>
 				</div>
 			</div>
             <div data-aos="zoom-in" ; <div class="highlights" id="highlights">
 				<h2>HIGHLIGHTS</h2>
-				<div class="highlight-items">
-					<div class="highlight-item">
-						<h3>
-							<a href="https://www.linkedin.com/posts/db1713_im-happy-to-announce-that-our-project-virtual-activity-6952240695000608768-cF5q?utm_source=share&utm_medium=member_desktop" target="_blank"> Certification of Merit <span class="icon">↗</span>
-							</a>
-						</h3>
-						<p>Secured the second place prize for my undergrad capstone project "VR Based Stroke Rehabilitation"</p>
-					</div>
-					<div class="highlight-item">
-						<h3>
-							<a href="https://ieeexplore.ieee.org/document/10370558" target="_blank"> Published my First Paper <span class="icon">↗</span>
-							</a>
-						</h3>
-						<p>My undergrad capstone project's potential allowed me to turn it into a publication! As someone who did this for fun, this was my first stepping stone into the world of research work!</p>
-					</div>
-					<div class="highlight-item">
-						<h3>
-							<a href="https://db1713.github.io/db/" target="_blank">Cumulative experience of 3+ years</a>
-						</h3>
-						<p>I have an experience of 1.5 years of experience as XR intern and over 2 years of experience as developer (Cryenx Labs, India) and research assistant (I3D Lab, IISc, India)</p>
-					</div>
-				</div>
+                <div class="highlight-items">
+                    <div class="highlight-item">
+                        <h3>
+                            <a href="https://www.linkedin.com/posts/db1713_im-happy-to-announce-that-our-project-virtual-activity-6952240695000608768-cF5q?utm_source=share&utm_medium=member_desktop" target="_blank">
+                                Certification of Merit <span class="icon">↗</span>
+                            </a>
+                        </h3>
+                        <p>Secured the second place prize for my undergrad capstone project "VR Based Stroke Rehabilitation"</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>
+                            <a href="#" style="display: inline-flex; align-items: center;">
+                                Master of Science in Human Computer Interaction
+                                <img src="iu_logo.png" alt="IU Logo" style="width: 50px; height: 50px; margin-left: 8px;">
+                                 </a>
+            </h3>
+                        <p>Graduating May 2026</p>
+                        <h3>
+                            <a href="#" style="display: inline-flex; align-items: center;">
+                                Bachelors of Engineering in Information Science
+                                <img src="rit.png" alt="IU Logo" style="width: 50px; height: 50px; margin-left: 8px;">
+                            </a>
+                        </h3>
+                        <p>Don't worry, I did really well.</p>
+                       
+                    </div>
+                    <div class="highlight-item">
+                        <h3>
+                            <a href="https://ieeexplore.ieee.org/document/10370558" target="_blank">
+                                Published my First Paper <span class="icon">↗</span>
+                            </a>
+                        </h3>
+                        <p>My undergrad capstone project's potential allowed me to turn it into a publication! As someone who did this for fun, this was my first stepping stone into the world of research work!</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>
+                            <a href="https://db1713.github.io/db/" target="_blank">Cumulative experience of 3+ years</a>
+                        </h3>
+                        <p>I have an experience of 1.5 years of experience as XR intern and over 2 years of experience as developer (Cryenx Labs, India) and research assistant (I3D Lab, IISc, India)</p>
+                    </div>
+                </div>
 			</div>
 			<div data-aos="zoom-in" ; <div class="projects" id="projects">
 				<h2>PROJECTS</h2>
@@ -753,7 +798,7 @@
 							<div class="skill">Design Thinking</div>
 							<div class="skill">Agile & Lean UX</div>
 							<!--<div class="skill">User Interface (UI) Design</div>-->
-							
+
 							<!-- Add more skills as needed -->
 						</div>
 					</div>
@@ -964,7 +1009,7 @@
 
                     </div>
                 </div>
-               
+
             </div>
 			<div class="courses" id="courses-certifications">
 				<h2>COURSES & CERTIFICATIONS</h2>
@@ -1018,8 +1063,8 @@
 			<div class="contact" id="contact">
 				<h2>GET IN TOUCH</h2>
 				<p>
-					<a href="mailto:dineshbhathad@gmail.com">
-						<i class="fas fa-envelope"></i> dineshbhathad@gmail.com </a>
+					<a href="mailto:dineshbhathad1713@gmail.com">
+						<i class="fas fa-envelope"></i> dineshbhathad1713@gmail.com </a>
 				</p>
 				<p>
 					<a href="https://www.linkedin.com/in/db1713/" target="_blank">
@@ -1038,6 +1083,7 @@
 		</div>
             <footer> &copy; 2024 Dinesh Bhathad. All rights reserved. </footer>
             <script>AOS.init();
+
                 document.addEventListener("DOMContentLoaded", function () {
 
                     const skillBars = document.querySelectorAll('.skill-bar-inner');
@@ -1134,7 +1180,95 @@
                         }, 100);
                     });
 
-   
-                });</script>
+
+                });
+
+                const canvas = document.getElementById('particleCanvas');
+                const ctx = canvas.getContext('2d');
+
+                // Set canvas to fill the window
+                canvas.width = window.innerWidth;
+                canvas.height = document.body.scrollHeight;
+
+                // Particle object definition
+                class Particle {
+                    constructor(x, y, size, speedX, speedY) {
+                        this.x = x;
+                        this.y = y;
+                        this.size = size;
+                        this.speedX = speedX;
+                        this.speedY = speedY;
+                    }
+
+                    // Draw a circle representing the particle
+                    draw() {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                        ctx.fill();
+                    }
+
+                    // Update particle position and check boundaries
+                    update() {
+                        this.x += this.speedX;
+                        this.y += this.speedY;
+
+                        // Bounce from edges
+                        if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                            this.speedX = -this.speedX;
+                        }
+                        if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                            this.speedY = -this.speedY;
+                        }
+
+                        this.draw();
+                    }
+                }
+
+                // Array to hold all particles
+                const particlesArray = [];
+
+                // Create particles
+                function init() {
+                    particlesArray.length = 0; // Clear the array first
+                    const numberOfParticles = 200;
+
+                    for (let i = 0; i < numberOfParticles; i++) {
+                        const size = Math.random() * 5 + 1;
+                        const x = Math.random() * (canvas.width - size * 2) + size;
+                        const y = Math.random() * (canvas.height - size * 2) + size;
+                        const speedX = (Math.random() * 0.5) - 0.25;
+                        const speedY = (Math.random() * 0.5) - 0.25;
+
+                        particlesArray.push(new Particle(x, y, size, speedX, speedY));
+                    }
+                }
+
+                // Animation loop
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particlesArray.forEach(particle => particle.update());
+                    requestAnimationFrame(animate);
+                }
+
+                // Resize canvas if window size changes
+                window.addEventListener('resize', function () {
+                    canvas.width = window.innerWidth;
+                    canvas.height = display.body.scrollHeight;
+                    init(); // Reinitialize particles to fit new canvas size
+                });
+
+                // Initialize and start animation
+                init();
+                animate();
+
+
+
+
+
+
+
+
+            </script>
 </body>
 </html>
