@@ -47,6 +47,8 @@
 
             #fab:hover {
                 background-color: grey;
+                transform: translateY(-10px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             }
 
         html {
@@ -268,7 +270,7 @@
            
             padding: 20px;
             margin-bottom: 20px;
-            border-radius: 8px;
+            border-radius: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 0.1px solid #0d0d0d;
@@ -297,7 +299,7 @@
         .project-item img {
             width: 100px;
             height: auto;
-            border-radius: 8px;
+            border-radius: 20px;
             margin-right: 20px;
             margin-top: 25px;
             position: sticky;
@@ -340,7 +342,7 @@
             margin-top: 10px;
            
             padding: 30px;
-            border-radius: 8px;
+            border-radius: 20px;
             position: relative;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
             border: 0.1px solid #0d0d0d;
@@ -387,14 +389,16 @@
             }
 
         .skills .skills-list {
-            display: flex;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
             flex-wrap: wrap;
             gap: 10px;
         }
 
             .skills .skills-list .skill {
                 background-color: white;
-                border: 2px solid #0d0d0d;
+                border: 1px solid #0d0d0d;
                 border-radius: 12px;
                 padding: 5px 20px;
                 font-size: 1em;
@@ -403,6 +407,7 @@
                 /*cursor: pointer;*/
                 cursor: default;
                 transition: background-color 0.3s ease;
+                
             }
 
                 .skills .skills-list .skill:hover {
@@ -554,7 +559,7 @@
 						<img src="Me.jpg" alt="Your Headshot" id="bioImage">
 					</div>
                     <div class="bio-text">
-                        <h2 style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: center; border-radius: 8px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); " id="typewriter"></h2>
+                        <h2 style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: center; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); " id="typewriter"></h2>
                         <script>const text = "Hi, I am Dinesh.";
                             let index = 0;
 
@@ -566,7 +571,7 @@
                                 }
                             }
                             type();</script>
-                        <p style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: justify; border-radius: 8px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+                        <p style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: justify; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
                             I'm an XR enthusiast, researcher and developer.<br><br>
                             I'm currently pursuing my Master's in Human Computer Interaction at Indiana University.<br><br>
                             My current focus lies on improving mental and physical healthcare with XR.<br><br>
@@ -1062,22 +1067,22 @@
 			</div>
 			<div class="contact" id="contact">
 				<h2>GET IN TOUCH</h2>
-				<p>
+				<h3 style="display: flex; justify-content: space-between; gap: 10px;">
 					<a href="mailto:dineshbhathad1713@gmail.com">
 						<i class="fas fa-envelope"></i> dineshbhathad1713@gmail.com </a>
-				</p>
-				<p>
+			
+				
 					<a href="https://www.linkedin.com/in/db1713/" target="_blank">
 						<i class="fab fa-linkedin"></i> LinkedIn </a>
-				</p>
-				<p>
+				
+				
 					<a href="https://github.com/db1713" target="_blank">
 						<i class="fab fa-github"></i> GitHub </a>
-				</p>
-				<p>
-					<a href="https://flowcv.com/resume/mbsbmhektf" target="_blank">
+				
+			
+					<a href="resume.pdf" target="_blank">
 						<i class="fas fa-file-pdf"></i> Resumé </a>
-				</p>
+				</h3>
 			</div>
 		</div>
 		</div>
