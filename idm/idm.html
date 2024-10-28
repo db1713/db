@@ -1,0 +1,1505 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinesh Bhathad</title>
+    <a href="#top" id="fab">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bruno+Ace+SC&family=Bungee+Hairline&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&display=swap');
+
+        canvas {
+            display: block ;
+            position:absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Canvas behind the panels */
+        }
+
+        /* Table Code*/
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1db954;
+            color: white;
+        }
+       
+        tr:nth-child(even) {
+            color : white;
+            background-color: #535353;
+        }
+
+        tr:nth-child(odd) {
+            color : white;
+            background-color: #121212;
+        }
+
+        /* Table Code*/
+
+
+        #fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            border-radius: 50%;
+            border: 2px solid black;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+
+            #fab:hover {
+                background-color: grey;
+                transform: translateY(-10px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            }
+
+        html {
+            scroll-behavior: smooth;
+            /* Smooth scrolling */
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'Chakra Petch', sans-serif;
+            background-color: #212121;
+            color: white;
+            overflow-x: hidden;
+            font-size: 18px;
+            letter-spacing: 0.05em;
+            padding-top: 100px;
+            /* Add padding to avoid content being hidden under fixed header */
+        }
+
+        header {
+            /*background-color: #1a1a1a;*/
+
+            background-color: #212121;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+            header h1 {
+                color: black;
+                margin: 0;
+                font-size: 3em;
+                text-shadow: 0 0 0px #0d0d0d, 0 0 0px #0d0d0d, 0 0 0px #0d0d0d;
+                transition: font-size 0.3s ease;
+            }
+
+                header h1:hover {
+                    color: black;
+                    font-size: 3.5em;
+                }
+
+            header p {
+                margin: 5px 0 0;
+                font-size: 1.2em;
+                transition: font-size 0.3s ease;
+            }
+
+                header p:hover {
+                    font-size: 1.4em;
+                }
+
+        nav {
+            margin-top: 10px;
+        }
+
+            nav a {
+                color: white;
+                margin: 0 10px;
+                text-decoration: none;
+                font-size: 1.8em;
+            }
+
+                nav a:hover {
+                    font-size: 3em;
+                    color: black;
+                    text-shadow: 0 0 10px #fff;
+                }
+
+        .container {
+            width: 100%;
+            /* Changed from 80% to 100% */
+            padding: 0 10px;
+            /* Add padding to maintain spacing */
+            margin: 20px auto;
+            max-width: 1200px;
+            padding-bottom: 50px;
+            /* Ensure space for the footer */
+        }
+
+        .bio,
+        .highlights,
+        .projects,
+        .contact,
+        .skills,
+        .experience,
+        .courses,
+        .certifications {
+            margin: 20px 0;
+        }
+
+            .bio h2,
+            .highlights h2,
+            .projects h2,
+            .contact h2,
+            .skills h2,
+            .experience h2,
+            .courses h2,
+            .certifications h2 {
+                color: #1db954;
+                text-align: left;
+                transition: font-size 0.3s ease;
+            }
+
+                .bio h2:hover,
+                .highlights h2:hover,
+                .projects h2:hover,
+                .contact h2:hover,
+                .skills h2:hover,
+                .experience h2:hover,
+                .courses h2:hover,
+                .certifications h2:hover {
+                    font-size: 2.5em;
+                }
+
+        .bio-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .bio-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding-right: 145px;
+            padding-left: 145px;
+            perspective: 1000px;
+            /* Required for the 3D effect */
+        }
+
+            .bio-image img {
+                border-radius: 50%;
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                border: 2px solid #1db954;
+                animation: borderGrow 1s ease-in-out;
+                transition: transform 0.5s ease-out;
+                transform-style: preserve-3d;
+                /* Ensures the 3D effect is applied */
+            }
+
+        @keyframes borderGrow {
+            0% {
+                border-width: 2px;
+            }
+
+            50% {
+                border-width: 10px;
+            }
+
+            100% {
+                border-width: 2px;
+            }
+        }
+
+        .bio p,
+        .highlight-item h3,
+        .highlight-item p,
+        .project-item h3,
+        .project-item p,
+        .contact p,
+        a,
+        .course-item h3,
+        .course-item p,
+        .certification-item h3,
+        .certification-item p {
+            text-align: left;
+            transition: font-size 0.3s ease;
+        }
+
+            .bio p:hover,
+            .highlight-item h3:hover,
+            .highlight-item p:hover,
+            .project-item h3:hover,
+            .project-item p:hover,
+            .contact p:hover,
+            a:hover,
+            .course-item h3:hover,
+            .course-item p:hover,
+            .certification-item h3:hover,
+            .certification-item p:hover {
+
+                font-size: 1.2em;
+            }
+
+        .highlight-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        
+        .highlight-item,
+        .project-item,
+        .experience-item,
+        .course-item,
+        .certification-item {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255,255,255, 0.1);
+           
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.1px solid #0d0d0d;
+        }
+
+            
+            .highlight-item:hover,
+            .project-item:hover,
+            .experience-item:hover,
+            .course-item:hover,
+            .certification-item:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+            }
+
+        .highlight-item {
+            flex: 1 1 calc(33% - 20px);
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+            .highlight-item:last-child {
+                margin-right: 0;
+            }
+
+        .project-item img {
+            width: 150px;
+            height: auto;
+            border-radius: 20px;
+            margin-right: 20px;
+            margin-top: 25px;
+            position: sticky;
+            top: 50px;
+        }
+
+        .project-item {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            position: relative;
+        }
+
+            .project-item .more-content {
+                display: none;
+                margin-top: 20px;
+            }
+
+            .project-item.expanded .more-content {
+                display: block;
+            }
+
+            .project-item.expanded .see-more {
+                display: none;
+            }
+
+        .more-content img {
+            width: 30%;
+            /* Ensure images fit within their container */
+            height: auto;
+            /* Maintain aspect ratio */
+            margin-right: 10px;
+            border-radius: 8px;
+        }
+
+        .skills .skill-category {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255,255,255, 0.1);
+            margin-bottom: 30px;
+            margin-top: 10px;
+           
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            border: 0.1px solid #0d0d0d;
+        }
+
+            .skills .skill-category:hover {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+                transform: translateY(-10px);
+            }
+
+            .skills .skill-category h3 {
+                font-size: 1.5em;
+                margin-top: 1px;
+                margin-bottom: 15px;
+                color: #1db954;
+            }
+
+            .skills .skill-category .skill-bar {
+                background-color: #000;
+                border-radius: 8px;
+                overflow: hidden;
+                position: relative;
+                height: 20px;
+                margin-bottom: 15px;
+            }
+
+            .skills .skill-category .skill-bar-inner {
+                background-color: #00ffcc;
+                height: 100%;
+                width: 0%;
+                transition: width 5s ease;
+            }
+
+            .skills .skill-category .skill-bar[data-skill-level="90"] .skill-bar-inner {
+                width: 90%;
+            }
+
+            .skills .skill-category .skill-bar[data-skill-level="85"] .skill-bar-inner {
+                width: 85%;
+            }
+
+            .skills .skill-category .skill-bar[data-skill-level="80"] .skill-bar-inner {
+                width: 80%;
+            }
+
+        .skills .skills-list {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+            .skills .skills-list .skill {
+                background-color: #212121;
+                border: 1px solid #1db954;
+                border-radius: 12px;
+                padding: 5px 20px;
+                font-size: 1em;
+                color: white;
+                text-align: center;
+                
+                transition: background-color 0.3s ease;
+                
+            }
+
+                .skills .skills-list .skill:hover {
+                    /*background-color: #00ffcc;*/
+                    /*color: #0d0d0d;*/
+                }
+
+        /* .skills .skill {
+            margin-bottom: 10px;
+        }
+
+        .skills .skill-name {
+            font-size: 1.2em;
+        }
+
+        .skills .skill-bar {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            height: 20px;
+        }
+
+        .skills .skill-bar-inner {
+            background-color: #00ffcc;
+            height: 100%;
+            width: 0;
+            transition: width 4s ease;
+        }
+
+        */
+        .icon {
+            margin-left: 8px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: #212121;
+            color: #1db954;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+
+        a {
+            color: #1db954;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: #1db954;
+               /* text-shadow: 0 0 10px #808080;*/
+            }
+
+        @media (max-width: 768px) {
+            .highlight-item {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .highlight-item {
+                flex: 1 1 100%;
+            }
+
+            .project-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+                .project-item img {
+                    margin-bottom: 10px;
+                    width: 100%;
+                    /* Ensure images fit within their container */
+                }
+
+            .bio-content {
+                flex-direction: column;
+            }
+
+            .bio-image {
+                margin-top: 20px;
+            }
+        }
+
+        .toggle-vibes {
+            cursor: pointer;
+            color: #00ffcc;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .bio,
+        .highlights,
+        .projects,
+        .contact,
+        .skills,
+        .experience,
+        .courses,
+        .certifications {
+            margin: 20px 0;
+            scroll-margin-top: 120px;
+            /* Adjust this value based on your header height */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+
+    <audio id="intro-sound">
+        <source src="intro.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio><audio id="tap-sound">
+        <source src="tap.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        <!--</audio><audio id="swoosh-sound"><source src="swoosh.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.-->
+    </audio><audio id="scroll-sound">
+        <source src="ticklong.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <header>
+        <nav>
+            <!--<a href="#about-me">About Me</a>-->
+            <!--<a href="#highlights">Highlights</a>-->
+            <a href="#tasks">Tasks & Quants</a>
+            <a href="#tools">Tools & Methods</a>
+            <a href="#data">Data Analysis</a>
+            <a href="#keyfind">Key Findings</a>
+
+
+            <!--<a href="#courses-certifications">Certifications</a>-->
+            <!--<a href="#contact">Contact</a>-->
+            <!--<a><span class="toggle-vibes" id="toggle-vibes">Enable Vibes
+    </a></span>-->
+</header>
+    </nav>
+    <div class="container">
+        <div class="bio" id="about-me">
+            <h2>User Experience Research Case Study</h2>
+            <div data-aos="zoom-in" ; <div class="bio-content">
+					<div class="bio-image">
+						<img src="spf.png" alt="Your Headshot" id="bioImage">
+					</div>
+                    <div class="bio-text">
+                        <h2 style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: center; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); " id="typewriter"></h2>
+                        <script>const text = "Spotify - Is it really that good?";
+                            let index = 0;
+
+                            function type() {
+                                if (index < text.length) {
+                                    document.getElementById('typewriter').innerHTML += text.charAt(index);
+                                    index++;
+                                    setTimeout(type, 100);
+                                }
+                            }
+                            type();</script>
+                        <p style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: justify; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+                        <b style=" color: #1db954;">Background:</b><br>
+                       Students use Spotify almost everyday to get them through their jam packed life juggling assignments, collaborative projects, sports and social life. Spotify hosts a plethora of music which helps them be relaxed, beat the nerves, make music the life of a party etc.<br>
+                            It is important for them to be able to find music quickly, share playlists and manage their listening experience.<br><br>
+
+                       <b style=" color: #1db954;">Initial Problem:</b><br>
+                        Research revealed several recurring issues. Students reported challenges in managing playlists, with difficulties in finding the right music for specific moods or activities. Social features like sharing playlists or following friends’ music activities felt underutilized or cumbersome to navigate. Additionally, music discovery often led to repetitive recommendations rather than genuinely new content, reducing user satisfaction.
+                        </p>
+
+
+                    </div>
+				</div>
+			</div>
+            <div data-aos="zoom-in" class="highlights" id="highlights">
+                <h2>MOTIVATION, ROLE & RESEARCH GOALS</h2>
+                <div class="highlight-items">
+                    <div class="highlight-item">
+                        <h3>
+                            <a>
+                                Motivation
+                            </a>
+                        </h3>
+                        <p>
+                            This study was driven by Spotify's heavy use among college students for studying, workouts, and socializing.
+                            Despite its popularity, user interviews uncovered usability issues with playlist management, music discovery,
+                            and social features. The study aimed to identify these pain points and suggest solutions to make Spotify more
+                            user-friendly for students.
+                        </p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h3>
+                            <a>
+                                Role
+                            </a>
+                        </h3>
+                        <p>My role involved multiple responsibilities:</p>
+                        <ul>
+                            <li>
+                                <strong>User Interviews:</strong> Conducted interviews to identify Spotify’s usability issues among students.
+                            </li>
+                            <li>
+                                <strong>Task Identification:</strong> Helped define evaluation tasks focused on playlist management, social features, and music discovery.
+                            </li>
+                            <li>
+                                <strong>Data Collection and Analysis:</strong> Organized think-aloud sessions, tracked metrics, and used statistical measures to analyze usability.
+                            </li>
+                            <li>
+                                <strong>Reporting and Recommendations:</strong> Documented findings, calculated SUS scores, and suggested design improvements.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h3>
+                            <a>
+                                Research Goals
+                            </a>
+                        </h3>
+                        <ol>
+                            <li>
+                                <strong>Evaluate User Experience:</strong> Assess how well students interact with Spotify’s features, focusing on playlist management, social interactions, and the "Now Playing" screen.
+                            </li>
+                            <li>
+                                <strong>Identify Usability Issues:</strong> Pinpoint pain points and challenges through task completion rates, error rates, and other metrics.
+                            </li>
+                            <li>
+                                <strong>Measure User Satisfaction:</strong> Use SUS scores to evaluate usability against industry benchmarks.
+                            </li>
+                            <li>
+                                <strong>Provide Actionable Recommendations:</strong> Propose design changes to improve Spotify’s user experience for students.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="zoom-in" ; <div class="highlights" id="highlights">
+				<h2>USER PAIN POINTS</h2>
+                <div class="highlight-items">
+                    <div class="highlight-item">
+                        <h3>
+                            <a>
+                                Playlist Management
+                            </a>
+                        </h3>
+                        <p>Participants found rearranging songs confusing due to hidden settings and inconsistent mobile vs. desktop experiences.</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h3>
+                            <a >
+                                Navigating to Friends’ Profiles
+                            </a>
+                        </h3>
+                        <p>Accessing friends’ music activities was a multi-step process that users found unintuitive.</p>
+                    </div>
+
+                </div>
+			</div>
+            <div data-aos="zoom-in" ; <div class="highlights" id="highlights">
+				<h2>REAL WORL EXAMPLES</h2>
+                <div class="highlight-items">
+                    <div class="highlight-item">
+                        <h3>
+                            <a>
+                                “I struggled to find my friend’s profile. I didn’t expect to go through so many steps just to see what they were listening to.”
+                            </a>
+                        </h3>
+
+                    </div>
+
+                    <div class="highlight-item">
+                        <h3>
+                            <a >
+                                “Rearranging songs in a playlist took longer than it should. I had to hunt around to find the edit option.”
+                            </a>
+                        </h3>
+
+                    </div>
+
+                </div>
+			</div>
+                                      <div data-aos="zoom-in" ; <div class="projects" id="tasks">
+    <h2>TASKS & THEIR QUANTITATIVE ANALYSIS</h2>
+    <div class="project-item">
+        <img src="heart.png" alt="Project Thumbnail">
+        <div>
+            <h3 style=" color: #1db954;">Task 1: Add a New Song to Your Most Used Playlist from the ‘Now Playing’ Screen</h3>
+            <p>Users were instructed to add a new song to their 'most used' playlist only via the Now Playing Screen.</p>
+            <p class="see-more">
+                See more <i class="fas fa-arrow-down"></i>
+            </p>
+            <div class="more-content">
+                <ul>
+                    <li>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10370558/authors#authors" target="_blank">
+                            Link to Data Sheet<span class="icon">↗</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li><b>Success Rate:</b> 100% (12/12 users completed the task).</li>
+                    <li><b>Error Rate:</b> 0% (no reported errors for this task).</li>
+                    <li><b>Success Criteria:</b> The song is successfully added to the desired playlist.</li>
+                    <li><b>Likelihood that 70% of Users Could Complete the Task:</b> The probability that the observed proportion of 1 comes from a population greater than 0.7 is 99.31%.</li>
+                </ul>
+               
+                <p>Tap to see less.</p>
+            </div>
+        </div>
+    </div>
+    <div class="project-item">
+        <img src="friend.png" alt="Project Thumbnail">
+        <div>
+            <h3 style=" color: #1db954;">Task 2: Navigate to Your Friend’s Profile, Find a Song/Playlist Your Friend is Listening to, and Add it to Your Library</h3>
+            <p>Users were instructed to find a friend's profile on Spotify, and from one of thier playlists, the user had to add a song to their own playlist.</p>
+            <p class="see-more">
+                See more <i class="fas fa-arrow-down"></i>
+            </p>
+            <div class="more-content">
+                <ul>
+                    <li><b>Success Rate:</b> 83% (10/12 users completed the task).</li>
+                    <li><b>Error Rate:</b> Lower than Task 3 but not explicitly provided.</li>
+                    <li>
+                        <b>Success Criteria:</b>
+                        <ul>
+                            <li>The user is able to locate a friend’s profile.</li>
+                            <li>The user is able to find a song on their friend’s profile.</li>
+                            <li>The user is able to add the song to their own playlist.</li>
+                        </ul>
+                    </li>
+                    <li><b>Likelihood that 70% of Users Could Complete the Task:</b> The probability that the observed proportion of 0.83 comes from a population greater than 0.7 is 83.11%.</li>
+                </ul>
+               
+                <p>Tap to see less.</p>
+            </div>
+        </div>
+    </div>
+    <div class="project-item">
+        <img src="shuffle.png" alt="Project Thumbnail">
+        <div>
+            <h3 style=" color: #1db954;">Task 3: Within Your Playlist, Group 2 Songs Together from the Same Album</h3>
+            <p>The user was instructed re-arrange or reorganize a few of their songs from the same artist or genre. This task highlighted critical UI issues for performing this task.</p>
+            <p class="see-more">
+                See more <i class="fas fa-arrow-down"></i>
+            </p>
+            <div class="more-content">
+                <h4>Problem Statement</h4>
+                <ul>
+                    <li><b>Success Rate:</b> 50% (6/12 users completed the task).</li>
+                    <li><b>Error Rate:</b> Higher error rate compared to Tasks 1 and 2.</li>
+                    <li>
+                        <b>Success Criteria:</b>
+                        <ul>
+                            <li>The user is able to edit the playlist.</li>
+                            <li>The user is able to rearrange the playlist to group songs as per the goal.</li>
+                        </ul>
+                    </li>
+                    <li><b>Likelihood that 70% of Users Could Complete the Task:</b> The probability that the observed proportion of 0.5 comes from a population greater than 0.7 is 7.82%.</li>
+                </ul>
+              
+                <p>Tap to see less.</p>
+            </div>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Completion</th>
+                <th>Task Completion for Confidence Interval</th>
+                <th>What does the confidence interval mean?</th>
+                <th>Criteria defining success/failure</th>
+                <th>Likelihood that 70% of all users could complete the task</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Task 1: Add a new song to your most used playlist from the 'Now Playing' screen.</td>
+                <td>12/12 users completed the task.</td>
+                <td>We can be 95% sure that the actual population completion rate is between <span style="color: #1db954;">92.86%</span> and <span style="color: #1db954;">100%</span>.</td>
+                <td>It is unlikely that users will fail this task due to the high success rate.</td>
+                <td>The song is added to the desired playlist.</td>
+                <td>The probability the observed proportion 1 comes from a population greater than 0.7 is <span style="color: #1db954;">99.31%</span>.</td>
+            </tr>
+            <tr>
+                <td>Task 2: Navigate to your friend's profile, find a song/playlist your friend is listening to, add it to your library.</td>
+                <td>10/12 users completed the task.</td>
+                <td>We can be 95% sure that the actual population completion rate is between <span style="color: #1db954;">78.57%</span> and <span style="color: #1db954;">96.50%</span>.</td>
+                <td>It is unlikely that users will fail this task due to the high success rate.</td>
+                <td>
+                    1. The user is able to locate a friend's profile.<br>
+                    2. User is able to locate a song on their friend's profile from their playlist.<br>
+                    3. User is able to add the song to their playlist.
+                </td>
+                <td>The probability the observed proportion 0.83 comes from a population greater than 0.7 is <span style="color: #1db954;">83.11%</span>.</td>
+            </tr>
+            <tr>
+                <td>Task 3: Within your playlist, group 2 songs together from the same album.</td>
+                <td>6/12 users completed the task.</td>
+                <td>We can be 95% sure that the actual population completion rate is between <span style="color: #1db954;">50%</span> and <span style="color: #1db954;">74.62%</span>.</td>
+                <td>There is a small chance that the task may not be completed.</td>
+                <td>
+                    1. User is able to edit the playlist.<br>
+                    2. User is able to rearrange the playlist as per the goal.
+                </td>
+                <td>The probability the observed proportion 0.5 comes from a population greater than 0.7 is <span style="color: #1db954;">7.82%</span>.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+			<div data-aos="zoom-in" ; div class="skills" id="tools">
+				<h2>TOOLS AND METHODS USED</h2>
+				<!-- Development Skills -->
+				<div class="skills">
+					<!-- UX Skills -->
+					<div class="skill-category">
+						<h3>TOOLS</h3>
+						<!--<div class="skill-bar" data-skill-level="85"><div class="skill-bar-inner"></div></div>-->
+						<div class="skills-list">
+							<div class="skill">Affinity Diagramming</div>
+							<!--<div class="skill">User Research</div>-->
+							<!--<div class="skill">Quantitative & Qualitative Data Analysis</div>-->
+							<div class="skill">Think Aloud Protocol</div>
+							<!--<div class="skill">Usability Testing</div>-->
+							<!--<div class="skill">Accessibility Compliance (WCAG)</div>-->
+							<div class="skill">Statistical Software</div>
+							<!--<div class="skill">Heuristic Evaluation</div>
+							<div class="skill">Ethnographic Research</div>
+							<div class="skill">A/B Testing</div>
+							<div class="skill">Surveys & Interviews</div>
+							<div class="skill">Task Analysis</div>-->
+							<div class="skill">Google Sheets</div>
+							<div class="skill">Figjam</div>
+							<!--<div class="skill">User Interface (UI) Design</div>-->
+
+							<!-- Add more skills as needed -->
+						</div>
+					</div>
+					<!-- Development Skills -->
+					<div class="skill-category">
+						<h3>METHODS VISUALIZATION</h3>
+						<!--<div class="skill-bar" data-skill-level="90"><div class="skill-bar-inner"></div></div>-->
+						<div class="skills-list">
+							<div class="skill">Affinity Mapping</div>
+							<div class="skill">Task Flow Diagrams</div>
+							<!--<div class="skill">Various HMDs (Head-Mounted Displays)</div>-->
+							<div class="skill">Surveys</div>
+							<div class="skill">Graphs and Charts</div>
+							<div class="skill">XR Dev</div>
+							<!--<div class="skill">XR Development</div>-->
+							<!--<div class="skill">Game Design</div>
+							<div class="skill">3D Modeling</div>-->
+
+							<!--<div class="skill">Physics Simulation</div>
+							<div class="skill">Spatial Audio Integration</div>
+							<div class="skill">Performance Optimization</div>
+							<div class="skill">Animation Systems</div>
+							<div class="skill">Interaction Design for Immersive Environments</div>-->
+							<!-- Add more skills as needed -->
+						</div>
+					</div>
+				</div>
+			</div>
+            <div data-aos="zoom-in" ; div class="experience" id="data">
+                <h2>
+                    METHODS AND DATA ANALYSIS TECHNIQUES
+                </h2>
+                <div class="project-item">
+                    <img src="persona.png" alt="Project Thumbnail">
+                    <div>
+                        <h3 style=" color: #1db954;">
+                            Recruitment and Participant Demographics<br>
+
+                        </h3>
+                        </p>
+                        The study recruited 12 participants, consisting of both local and international students from various academic programs, aged between 17 and 26. Participants were selected to represent typical Spotify users, with varying levels of experience using the platform, from three to 11 years. Recruitment occurred through university channels and word-of-mouth.
+                        <p>
+                            <ul>
+                                <li> Designed & Developed | Spearheaded | Demonstrated Autonomy</li>
+                            </ul>
+
+                        </p>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="nowplay.png" alt="Project Thumbnail">
+                    <div>
+                        <h3 style=" color: #1db954;">
+                            Procedures<br>
+
+                        </h3>
+
+
+                        <p>
+                            The study began with user interviews to understand participants’ experiences and uncover potential usability issues related to playlist management, music discovery, and social features. The interviews guided the identification of three key tasks:
+
+                            <ol>
+                                <li>Adding a song to a playlist from the “Now Playing” screen.</li>
+                                <li>Navigating to a friend’s profile and adding a song from their playlist.</li>
+                                <li>Grouping two songs together in a playlist.</li>
+                            </ol>
+                            A think-aloud protocol was used during the tasks, where participants verbalized their thoughts while completing each task. This provided insights into their decision-making process and any challenges they faced.
+                        </p>
+
+
+
+
+                    </div>
+                </div>
+                <!--<div class="experience-item">
+        <h2>
+            <strong>Research Assistant</strong>
+        </h2>
+        <p>
+            <strong>I3D Lab, IISc, India</strong>
+        </p>
+        <ul>
+            <li>Spearheaded the design and development of a virtual cockpit for conducting cognitive load estimation studies.</li>
+            <li>Gained an understanding of cognitive workload assessment methods, leading to more efficient and user-centric XR design solutions.</li>
+            <li>Engineered a versatile tool for selecting and implementing common user profiles across diverse interfaces, enhancing user experience and consistency.</li>
+            <li>Demonstrated autonomy and initiative by leading the entire project lifecycle while incorporating guidance and feedback from the professor.</li>
+            <li>Leveraged advanced technologies, including HTC Vive Pro Eye, Leap Motion, EMOTIV EEG headset, and eye-tracking data for user studies.</li>
+        </ul>
+
+        <em>September 2022 - May 2023 ; April 2024 - August 2024</em>
+        </p>
+    </div>-->
+                <!--<div class="experience-item">
+        <h2>
+            <strong> Unity SD-1</strong>
+        </h2>
+        <p>
+            <strong>Cryenx Labs</strong>
+        </p>
+        <ul>
+            <li>Spearheaded the development of a quest-based game for collecting NFTs based on users' geolocation.</li>
+            <li>Contributing to an existing project which serves as a 3D and Augmented Reality Viewer for viewing NFTs.</li>
+
+        </ul>
+
+        <p>
+            <em>August 2023- February 2024</em>
+        </p>
+    </div>-->
+                <h2>
+                    DATA ANALYSIS <p style="text-align: right;font-size: 0.8em;">
+    <em>Via Observations using Think Aloud Protocol</em>
+</p>
+                </h2>
+                <div class="project-item">
+                    <img src="5users.png" alt="Project Thumbnail">
+                    <div>
+                        <h3 style=" color: #1db954;">
+                            Probability of Detection<br>
+
+                        </h3>
+                        </p>
+                        Calculated to determine the likelihood of usability issues being identified by participants.<p>
+
+                            <table border="1" style="border-collapse: collapse; width: 100%;">
+                                <thead>
+                                    <tr style="background-color: #d5e8d4;">
+                                        <th>Participant/Issue</th>
+                                        <th>Searching for a Friend</th>
+                                        <th>Viewing a Friend's Activity</th>
+                                        <th>Playlist Management</th>
+                                        <th>Confusing UI</th>
+                                        <th>Inconsistencies across countries</th>
+                                        <th>Proportion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>P1</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>0.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P2</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>0.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P3</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td>0.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P4</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>0.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P5</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>0.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P6</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td>0.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P7</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>0.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P8</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>0.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P9</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td>0.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P10</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>0.4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P11</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>0.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P12</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>0.6</td>
+                                    </tr>
+                                    <tr style="background-color: #1db954;">
+                                        <td>Proportion</td>
+                                        <td>0.75</td>
+                                        <td>1</td>
+                                        <td>0.66</td>
+                                        <td>0.75</td>
+                                        <td>0.25</td>
+                                        <td><strong>0.682</strong></td>
+                                    </tr>
+                                    <tr style="background-color: #1db954;">
+                                        <td colspan="6">Percentage of issues that would be found with 5 raters</td>
+
+                                        <td>99%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="nowplay.png" alt="Project Thumbnail">
+                    <div>
+                        <h3 style=" color: #1db954;">
+                            Confidence Intervals
+
+                        </h3>
+
+
+                        <p>
+                            A confidence interval is like a range that tells us where we think the true value is likely to be. Imagine you measured something, like the average height of students in a class, and you got an average of 5 feet 6 inches. Instead of saying “the average height is exactly 5 feet 6 inches,” you say, “I’m pretty sure the true average is between 5 feet 4 inches and 5 feet 8 inches.”
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Task</th>
+
+                                        <th>Task Completion for Confidence Interval</th>
+                                        <th>What does the confidence interval mean?</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Task 1: Add a new song to your most used playlist from the 'Now Playing' screen.</td>
+
+                                        <td>We can be 95% sure that the actual population completion rate is between <span style="color: #1db954;">92.86%</span> and <span style="color: #1db954;">100%</span>.</td>
+                                        <td>It is unlikely that users will fail this task due to the high success rate.</td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td>Task 2: Navigate to your friend's profile, find a song/playlist your friend is listening to, add it to your library.</td>
+
+                                        <td>We can be 95% sure that the actual population completion rate is between <span style="color: #1db954;">78.57%</span> and <span style="color: #1db954;">96.50%</span>.</td>
+                                        <td>It is unlikely that users will fail this task due to the high success rate.</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Task 3: Within your playlist, group 2 songs together from the same album.</td>
+
+                                        <td>We can be 95% sure that the actual population completion rate is between <span style="color: #1db954;">50%</span> and <span style="color: #1db954;">74.62%</span>.</td>
+                                        <td>There is a small chance that the task may not be completed.</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+
+
+
+
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="susus.png" alt="Project Thumbnail">
+                    <div>
+                        <h3 style=" color: #1db954;">
+                            System Usability Scale (SUS)
+
+                        </h3>
+                        </p>
+                        Administered to measure overall user satisfaction, with scores compared against the industry benchmark of 70. Statistical tests were used to evaluate whether the mean SUS score significantly differed from the benchmark.
+                        <p>
+                            <b>Findings:</b>
+                            <ul>
+                                <li><b>Average SUS:</b> <span style="color: #1db954;">53.13</span></li>
+                                <li><b>Standard Deviation:</b> <span style="color: #1db954;">17.84</span></li>
+                                <li><b>T-Value:</b> <span style="color: #1db954;">-3.27</span>. This t-value is much smaller than the critical value (1.80), and it is negative, meaning the sample mean is far below 70.</li>
+                                <li>We can be 99% confident that this application has an average score lesser than the industry score of <span style="color: #1db954;">70</span>.</li>
+                                <li>There is not enough evidence to conclude that this interface's perceived usability is high, with a mean SUS score greater than <span style="color: #1db954;">70</span>. In fact, the mean SUS score of <span style="color: #1db954;">53.13</span> is significantly lower than <span style="color: #1db954;">70</span>, indicating that the usability might need improvement.</li>
+                                <li><b>Confidence Interval:</b> <span style="color: #1db954;">43.85</span> to <span style="color: #1db954;">62.39</span></li>
+                            </ul>
+
+                        </p>
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+           
+            <div data-aos="zoom-in" ; div class="courses" id="keyfind">
+                <h2>KEY FINDINGS, REFLECTIONS - TAKEWAYS & DESIGN RECOMMENDATIONS</h2>
+                <div class="certification-item">
+                    <h3>
+                        <a>Key Findings</a>
+                    </h3>
+                    <p>
+                        1. <strong style="color: #1db954;">Navigation Challenges:</strong> Many participants struggled to navigate to their friend’s profile and view their music activity. The process required multiple steps, making it unnecessarily complex. Searching for friends was difficult because it required navigating through the user’s own profile, which was not intuitive.
+                    </p>
+                    <p>
+                        2. <strong style="color: #1db954;">Playlist Management Issues:</strong> Managing playlists, including rearranging songs and grouping them from the same album, was confusing for most users. The edit functionality was hidden under settings, which was not where users expected to find it. Users frequently tried to use the "+" button on the "Now Playing" screen to add songs to a playlist, but it added them to the "Liked Songs" list instead, leading to confusion.
+                    </p>
+                    <p>
+                        3. <strong style="color: #1db954;">User Satisfaction:</strong> The System Usability Scale (SUS) scores were below the industry benchmark of 70, with an average score of 53.13. This indicates a generally low perceived usability for Spotify’s interface, especially concerning playlist management and social navigation. A confidence interval analysis confirmed that the actual usability score was likely to be significantly lower than the benchmark, showing room for improvement.
+                    </p>
+                    <p>
+                        4. <strong style="color: #1db954;">Consistency Across Platforms:</strong> Users noted inconsistencies between Spotify’s mobile and desktop interfaces. The desktop version appeared cluttered, while some mobile features were less accessible.
+                    </p>
+                </div>
+
+                <div class="certification-item">
+                    <h3>
+                        <a>Takeaways</a>
+                    </h3>
+                    <p>
+                        1. <strong style="color: #1db954;">Complex Social Features:</strong> The process of finding and interacting with friends' music activities is not intuitive, leading users to need assistance or give up. Simplifying social features could enhance user engagement.
+                    </p>
+                    <p>
+                        2. <strong style="color: #1db954;">Poor Playlist Management Experience:</strong> Users struggled with organizing and managing their playlists. This impacted overall satisfaction, with tasks like grouping songs and rearranging playlists being especially challenging.
+                    </p>
+                    <p>
+                        3. <strong style="color: #1db954;">Low Perceived Usability:</strong> With SUS scores indicating frustration, it’s clear that Spotify’s interface does not currently meet user expectations for ease of use, especially in terms of finding friends, managing playlists, and adding songs.
+                    </p>
+                    <p>
+                        4. <strong style="color: #1db954;">User Expectations vs. Reality:</strong> There is a disconnect between what users expect certain features to do (e.g., the "+" button) and their actual functionality. Addressing these mismatches could reduce user confusion.
+                    </p>
+                </div>
+
+                <div class="certification-item">
+                    <h3>
+                        <a>Design Recommendations</a>
+                    </h3>
+                    <p>
+                        1. <strong style="color: #1db954;">Enhance Social Navigation:</strong> Simplify the process of finding friends and viewing their activity. Create a dedicated "Friends" section on the dashboard where users can easily see what their friends are listening to. Add a search bar within the followers/following sections for quick access to friends' profiles, and allow friend searches through the main search bar.
+                    </p>
+                    <p>
+                        2. <strong style="color: #1db954;">Improve Playlist Management:</strong> Move the "Edit" option for playlists to the main screen where users naturally try to rearrange songs, making it more accessible. Introduce a search bar within playlists to allow users to quickly find and reposition songs. Modify the "+" button on the "Now Playing" screen to display a dropdown menu, allowing users to choose whether to add the song to "Liked Songs" or a specific playlist.
+                    </p>
+                    <p>
+                        3. <strong style="color: #1db954;">Consistency Across Platforms:</strong> Standardize features across mobile and desktop versions to reduce confusion. Ensure that commonly used features, like playlist editing, are located in the same place on both platforms. Streamline the desktop interface by decluttering and making key features more prominent.
+                    </p>
+                    <p>
+                        4. <strong style="color: #1db954;">Increase Visibility and Feedback for Users:</strong> Provide clearer visual cues for interactive elements like the "+" button, indicating what will happen when the user clicks it. Add a tutorial or onboarding process that guides users through finding friends, managing playlists, and other complex tasks.
+                    </p>
+                </div>
+
+            </div>
+            <div class="contact" id="contact">
+                <h2>GET IN TOUCH</h2>
+
+                <p>
+                    <a href="mailto:dineshbhathad1713@gmail.com">
+                        <i class="fas fa-envelope"></i> dineshbhathad1713@gmail.com
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.linkedin.com/in/db1713/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </p>
+                <p>
+                    <a href="https://github.com/db1713" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </p>
+                <p>
+                    <a href="resume.pdf" target="_blank">
+                        <i class="fas fa-file-pdf"></i> Resumé
+                    </a>
+                </p>
+            </div>
+		</div>
+		</div>
+            <footer> &copy; 2024 Dinesh Bhathad. All rights reserved. </footer>
+            <script>AOS.init();
+
+                document.addEventListener("DOMContentLoaded", function () {
+
+                    const skillBars = document.querySelectorAll('.skill-bar-inner');
+                    const swooshSound = document.getElementById('swoosh-sound');
+                    const introSound = document.getElementById('intro-sound');
+                    const tapSound = document.getElementById('tap-sound');
+                    const scrollSound = document.getElementById('scroll-sound');
+
+
+                    const bioImage = document.getElementById('bioImage');
+                    const container = document.querySelector('.bio-image');
+                    container.addEventListener('mousemove', (event) => {
+                        const containerRect = container.getBoundingClientRect();
+                        const xAxis = (containerRect.width / 2 + event.clientX + containerRect.left) / 5;
+                        const yAxis = (containerRect.height / 2 - event.clientY + containerRect.top) / 5;
+                        bioImage.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+                    });
+                    container.addEventListener('mouseleave', () => {
+                        bioImage.style.transform = 'rotateY(0deg) rotateX(0deg)';
+                    });
+                    // Set all skill bars to an initial width of 0
+                    skillBars.forEach(skillBar => {
+                        skillBar.style.width = '0%';
+                    });
+                    const playSwooshSound = () => {
+                        swooshSound.currentTime = 0;
+                        swooshSound.play().catch(error => {
+                            console.log('Error playing swoosh sound:', error);
+                        });
+                    };
+                    const playTapSound = () => {
+                        tapSound.currentTime = 0;
+                        tapSound.play().catch(error => {
+                            console.log('Error playing tap sound:', error);
+                        });
+                    };
+                    const playScrollSound = () => {
+                        scrollSound.currentTime = 0;
+                        scrollSound.play().catch(error => {
+                            console.log('Error playing scroll sound:', error);
+                        });
+                    };
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const skillBar = entry.target.querySelector('.skill-bar-inner');
+                                const skillLevel = entry.target.getAttribute('data-skill-level');
+                                skillBar.style.width = skillLevel + '%';
+                                observer.unobserve(entry.target); // Stop observing once animation is triggered
+                                playSwooshSound();
+                            }
+                        });
+                    }, {
+                        threshold: 0.1
+                    });
+                    // Observe each skill bar container
+                    document.querySelectorAll('.skill-bar').forEach(skill => {
+                        observer.observe(skill);
+                    });
+                    const projectItems = document.querySelectorAll('.project-item');
+                    projectItems.forEach(item => {
+                        item.addEventListener('click', () => {
+                            item.classList.toggle('expanded');
+                            if (!item.classList.contains('expanded')) {
+                                item.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'center' // Ensures the item scrolls to the center of the viewport
+                                });
+                            }
+                        });
+                    });
+                    const toggleVibes = document.getElementById('toggle-vibes');
+                    toggleVibes.addEventListener('click', function () {
+                        introSound.play().catch(error => {
+                            console.log('Error playing intro sound:', error);
+                        });
+                        toggleVibes.style.display = 'none';
+                    });
+                    document.querySelectorAll('a, .project-item').forEach(element => {
+                        element.addEventListener('click', playTapSound);
+                    });
+                    let isScrolling;
+                    window.addEventListener('scroll', function () {
+                        if (!scrollSound.paused) {
+                            scrollSound.currentTime = 0; // Loop the sound
+                        } else {
+                            playScrollSound();
+                        }
+                        window.clearTimeout(isScrolling);
+                        isScrolling = setTimeout(function () {
+                            // Scrolling has stopped
+                            scrollSound.pause();
+                            scrollSound.currentTime = 0; // Reset the sound
+                        }, 100);
+                    });
+
+
+                });
+
+                const canvas = document.getElementById('particleCanvas');
+                const ctx = canvas.getContext('2d');
+
+                // Set canvas to fill the window
+                canvas.width = window.innerWidth;
+                canvas.height = document.body.scrollHeight;
+
+                // Particle object definition
+                class Particle {
+                    constructor(x, y, size, speedX, speedY) {
+                        this.x = x;
+                        this.y = y;
+                        this.size = size;
+                        this.speedX = speedX;
+                        this.speedY = speedY;
+                    }
+
+                    // Draw a circle representing the particle
+                    draw() {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(30, 215, 96, 0.7)';
+                        ctx.fill();
+                    }
+
+                    // Update particle position and check boundaries
+                    update() {
+                        this.x += this.speedX;
+                        this.y += this.speedY;
+
+                        // Bounce from edges
+                        if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                            this.speedX = -this.speedX;
+                        }
+                        if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                            this.speedY = -this.speedY;
+                        }
+
+                        this.draw();
+                    }
+                }
+
+                // Array to hold all particles
+                const particlesArray = [];
+
+                // Create particles
+                function init() {
+                    particlesArray.length = 0; // Clear the array first
+                    const numberOfParticles = 200;
+
+                    for (let i = 0; i < numberOfParticles; i++) {
+                        const size = Math.random() * 5 + 1;
+                        const x = Math.random() * (canvas.width - size * 2) + size;
+                        const y = Math.random() * (canvas.height - size * 2) + size;
+                        const speedX = (Math.random() * 0.5) - 0.25;
+                        const speedY = (Math.random() * 0.5) - 0.25;
+
+                        particlesArray.push(new Particle(x, y, size, speedX, speedY));
+                    }
+                }
+
+                // Animation loop
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particlesArray.forEach(particle => particle.update());
+                    requestAnimationFrame(animate);
+                }
+
+                // Resize canvas if window size changes
+                window.addEventListener('resize', function () {
+                    canvas.width = window.innerWidth;
+                    canvas.height = display.body.scrollHeight;
+                    init(); // Reinitialize particles to fit new canvas size
+                });
+
+                // Initialize and start animation
+                init();
+                animate();
+
+
+
+
+
+
+
+
+            </script>
+</body>
+</html>
