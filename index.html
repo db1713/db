@@ -15,8 +15,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bruno+Ace+SC&family=Bungee+Hairline&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&display=swap');
 
         canvas {
-            display: block ;
-            position:absolute;
+            display: block;
+            position: absolute;
             top: 0;
             left: 0;
             z-index: -1; /* Canvas behind the panels */
@@ -85,7 +85,7 @@
 
         header {
             /*background-color: #1a1a1a;*/
-            
+
             background-color: rgba(255,255,255, 0.7);
             color: white;
             padding: 12px;
@@ -115,9 +115,7 @@
                 transition: font-size 0.3s ease;
             }
 
-                header p:hover {
-                    font-size: 1.4em;
-                }
+              
 
         nav {
             margin-top: 10px;
@@ -150,38 +148,22 @@
         .bio,
         .highlights,
         .projects,
-        .contact,
-        .skills,
-        .experience,
-        .courses,
-        .certifications {
+        .contact
+         {
             margin: 20px 0;
         }
 
             .bio h2,
             .highlights h2,
             .projects h2,
-            .contact h2,
-            .skills h2,
-            .experience h2,
-            .courses h2,
-            .certifications h2 {
+            .contact h2
+            {
                 color: black;
                 text-align: left;
                 transition: font-size 0.3s ease;
             }
 
-                .bio h2:hover,
-                .highlights h2:hover,
-                .projects h2:hover,
-                .contact h2:hover,
-                .skills h2:hover,
-                .experience h2:hover,
-                .courses h2:hover,
-                .certifications h2:hover {
-                    font-size: 2.5em;
-                }
-
+               
         .bio-content {
             display: flex;
             align-items: center;
@@ -223,33 +205,16 @@
             }
         }
 
-        .bio p,
-        .highlight-item h3,
-        .highlight-item p,
-        .project-item h3,
-        .project-item p,
-        .contact p,
-        a,
-        .course-item h3,
-        .course-item p,
-        .certification-item h3,
-        .certification-item p {
+      
+        a
+       {
             text-align: left;
             transition: font-size 0.3s ease;
         }
 
-            .bio p:hover,
-            .highlight-item h3:hover,
-            .highlight-item p:hover,
-            .project-item h3:hover,
-            .project-item p:hover,
-            .contact p:hover,
-            a:hover,
-            .course-item h3:hover,
-            .course-item p:hover,
-            .certification-item h3:hover,
-            .certification-item p:hover {
-
+           
+            a:hover
+           {
                 font-size: 1.2em;
             }
 
@@ -259,29 +224,24 @@
             flex-wrap: wrap;
         }
 
-        
+
         .highlight-item,
-        .project-item,
-        .experience-item,
-        .course-item,
-        .certification-item {
+        .project-item
+        {
             backdrop-filter: blur(5px);
-            background-color: rgba(255,255,255, 0.1);
-           
+            background-color: rgba(255,255,255, 1);
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 0.1px solid #0d0d0d;
+            border: 1px solid #0d0d0d;
         }
 
-            
+
             .highlight-item:hover,
-            .project-item:hover,
-            .experience-item:hover,
-            .course-item:hover,
-            .certification-item:hover {
+            .project-item:hover
+           {
                 transform: translateY(-10px);
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
             }
@@ -335,110 +295,8 @@
             border-radius: 8px;
         }
 
-        .skills .skill-category {
-            backdrop-filter: blur(5px);
-            background-color: rgba(255,255,255, 0.1);
-            margin-bottom: 30px;
-            margin-top: 10px;
-           
-            padding: 30px;
-            border-radius: 20px;
-            position: relative;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-            border: 0.1px solid #0d0d0d;
-        }
-
-            .skills .skill-category:hover {
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
-                transform: translateY(-10px);
-            }
-
-            .skills .skill-category h3 {
-                font-size: 1.5em;
-                margin-top: 1px;
-                margin-bottom: 15px;
-                color: black;
-            }
-
-            .skills .skill-category .skill-bar {
-                background-color: #000;
-                border-radius: 8px;
-                overflow: hidden;
-                position: relative;
-                height: 20px;
-                margin-bottom: 15px;
-            }
-
-            .skills .skill-category .skill-bar-inner {
-                background-color: #00ffcc;
-                height: 100%;
-                width: 0%;
-                transition: width 5s ease;
-            }
-
-            .skills .skill-category .skill-bar[data-skill-level="90"] .skill-bar-inner {
-                width: 90%;
-            }
-
-            .skills .skill-category .skill-bar[data-skill-level="85"] .skill-bar-inner {
-                width: 85%;
-            }
-
-            .skills .skill-category .skill-bar[data-skill-level="80"] .skill-bar-inner {
-                width: 80%;
-            }
-
-        .skills .skills-list {
-            display: grid;
-            justify-content: center;
-            grid-template-columns: repeat(2, 1fr);
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-            .skills .skills-list .skill {
-                background-color: white;
-                border: 1px solid #0d0d0d;
-                border-radius: 12px;
-                padding: 5px 20px;
-                font-size: 1em;
-                color: black;
-                text-align: center;
-                /*cursor: pointer;*/
-                cursor: default;
-                transition: background-color 0.3s ease;
-                
-            }
-
-                .skills .skills-list .skill:hover {
-                    /*background-color: #00ffcc;*/
-                    /*color: #0d0d0d;*/
-                }
-
-        /* .skills .skill {
-            margin-bottom: 10px;
-        }
-
-        .skills .skill-name {
-            font-size: 1.2em;
-        }
-
-        .skills .skill-bar {
-            background-color: #1a1a1a;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            height: 20px;
-        }
-
-        .skills .skill-bar-inner {
-            background-color: #00ffcc;
-            height: 100%;
-            width: 0;
-            transition: width 4s ease;
-        }
-
-        */
+      
+              
         .icon {
             margin-left: 8px;
             font-size: 1.2em;
@@ -460,7 +318,7 @@
 
             a:hover {
                 color: black;
-               /* text-shadow: 0 0 10px #808080;*/
+                /* text-shadow: 0 0 10px #808080;*/
             }
 
         @media (max-width: 768px) {
@@ -494,21 +352,14 @@
             }
         }
 
-        .toggle-vibes {
-            cursor: pointer;
-            color: #00ffcc;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
+       
+        
 
         .bio,
         .highlights,
         .projects,
-        .contact,
-        .skills,
-        .experience,
-        .courses,
-        .certifications {
+        .contact
+         {
             margin: 20px 0;
             scroll-margin-top: 120px;
             /* Adjust this value based on your header height */
@@ -518,48 +369,33 @@
 <body>
     <canvas id="particleCanvas"></canvas>
 
-    <audio id="intro-sound">
-        <source src="intro.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio><audio id="tap-sound">
-        <source src="tap.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-        <!--</audio><audio id="swoosh-sound"><source src="swoosh.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.-->
-    </audio><audio id="scroll-sound">
-        <source src="ticklong.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+
     <header>
         <nav>
-            <!--<a href="#about-me">About Me</a>-->
-            <!--<a href="#highlights">Highlights</a>-->
+
             <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#exp">Exp</a>
+           
             <a href="https://www.linkedin.com/in/db1713/" target="_blank">
                 <i class="fab fa-linkedin"></i>
             </a>
-            
-                <a href="https://flowcv.com/resume/mbsbmhektf" target="_blank">
-                    <i class="fas fa-file-pdf"></i>
-                </a>
-            
-            <!--<a href="#courses-certifications">Certifications</a>-->
-            <!--<a href="#contact">Contact</a>-->
-            <!--<a><span class="toggle-vibes" id="toggle-vibes">Enable Vibes
-    </a></span>-->
-</header>
-    </nav>
+
+            <a href="https://flowcv.com/resume/mbsbmhektf" target="_blank">
+                <i class="fas fa-file-pdf"></i>
+            </a>
+        </nav>
+
+    </header>
+  
+
     <div class="container">
         <div class="bio" id="about-me">
-            <h2 >ABOUT ME</h2>
+            <h2>ABOUT ME</h2>
             <div data-aos="zoom-in" ; <div class="bio-content">
 					<div class="bio-image">
 						<img src="Me.jpg" alt="Your Headshot" id="bioImage">
 					</div>
                     <div class="bio-text">
-                        <h2 style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: center; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); " id="typewriter"></h2>
+                        <h2 style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 1); padding: 10px; text-align: center; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); border: 1px solid #0d0d0d; " id="typewriter"></h2>
                         <script>const text = "Hi, I am Dinesh.";
                             let index = 0;
 
@@ -571,7 +407,7 @@
                                 }
                             }
                             type();</script>
-                        <p style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: justify; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+                        <p style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 1); padding: 10px; text-align: justify; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); border: 1px solid #0d0d0d;">
                             I'm an XR enthusiast, researcher and developer.<br><br>
                             I'm currently pursuing my Master's in Human Computer Interaction at Indiana University.<br><br>
                             My current focus lies on improving mental and physical healthcare with XR.<br><br>
@@ -595,20 +431,21 @@
                     </div>
                     <div class="highlight-item">
                         <h3>
-                            <a href="#" style="display: inline-flex; align-items: center;">
+                            <a href="#"
+                               style="display: inline-flex; align-items: center; text-decoration: none; color: inherit; pointer-events: none; cursor: default;">
                                 Master of Science in Human Computer Interaction
                                 <img src="iu_logo.png" alt="IU Logo" style="width: 50px; height: 50px; margin-left: 8px;">
-                                 </a>
-            </h3>
+                            </a>
+                        </h3>
                         <p>Graduating May 2026</p>
                         <h3>
-                            <a href="#" style="display: inline-flex; align-items: center;">
+                            <a href="#"
+                               style="display: inline-flex; align-items: center; text-decoration: none; color: inherit; pointer-events: none; cursor: default;">
                                 Bachelors of Engineering in Information Science
                                 <img src="rit.png" alt="IU Logo" style="width: 50px; height: 50px; margin-left: 8px;">
                             </a>
                         </h3>
                         <p>Don't worry, I did really well.</p>
-                       
                     </div>
                     <div class="highlight-item">
                         <h3>
@@ -620,7 +457,7 @@
                     </div>
                     <div class="highlight-item">
                         <h3>
-                            <a href="https://db1713.github.io/db/" target="_blank">Cumulative experience of 3+ years</a>
+                            Cumulative experience of 3+ years
                         </h3>
                         <p>I have an experience of 1.5 years of experience as XR intern and over 2 years of experience as developer (Cryenx Labs, India) and research assistant (I3D Lab, IISc, India)</p>
                     </div>
@@ -752,10 +589,10 @@
 
             </div>
             </div>
-			
 
 
-				
+
+
 				<div class="project-item">
 					<img src="sim4.jpg" alt="Project Thumbnail">
 					<div>
@@ -820,327 +657,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="project-item">
-					<img src="parking.jpeg" alt="Project Thumbnail">
-					<div>
-						<h3>Parking Availability For Cities</h3>
-						<p>A systematic solution that factors the driving nature of Indians for finding parking spots.</p>
-						<p class="see-more"> See more <i class="fas fa-arrow-down"></i>
-						</p>
-						<div class="more-content">
-							<ul>
-								<li>
-									<strong>Immersive Driving Test Simulation</strong>: This VR project provides an interactive and immersive experience for users to practice essential driving skills, specifically focusing on rearview mirror checks.
-								</li>
-								<li>
-									<strong>Realistic Mirror-Checking Task</strong>: Users are required to look at both internal and external rearview mirrors in any order within a 5-second window, simulating a real driving scenario.
-								</li>
-								<li>
-									<strong>Performance Evaluation</strong>: The simulation gives immediate feedback, indicating whether the user passes or fails based on their ability to complete the task within the specified time frame.
-								</li>
-								<li>
-									<strong>Skill Enhancement</strong>: Designed to help users improve their situational awareness and mirror-checking habits, crucial for safe driving.
-								</li>
-								<li>
-									<strong>Flexible Learning Environment</strong>: Ideal for driving learners and instructors, this VR project offers a controlled and safe environment to practice essential driving maneuvers.
-								</li>
-							</ul>
-							<div class="project-images">
-								<img src="parking1.jpeg" alt="Additional Image 1">
-								<img src="parking2.jpeg" alt="Additional Image 2">
-								<img src="passedmirror.png" alt="Additional Image 3">
-							</div>
-							<p>Tap to see less.</p>
-						</div>
-					</div>
-				</div>
+				
 			</div>
-			<div class="skills" id="skills">
-				<h2>SKILLS</h2>
-				<!-- Development Skills -->
-				<div class="skills">
-					<!-- UX Skills -->
-					<div class="skill-category">
-						<h3>Design</h3>
-						<!--<div class="skill-bar" data-skill-level="85"><div class="skill-bar-inner"></div></div>-->
-						<div class="skills-list">
-							<div class="skill">UX Research</div>
-							<!--<div class="skill">User Research</div>-->
-							<!--<div class="skill">Quantitative & Qualitative Data Analysis</div>-->
-							<div class="skill">Interaction Design</div>
-							<!--<div class="skill">Usability Testing</div>-->
-							<!--<div class="skill">Accessibility Compliance (WCAG)</div>-->
-							<div class="skill">User-Centered Design (UCD)</div>
-							<!--<div class="skill">Heuristic Evaluation</div>
-							<div class="skill">Ethnographic Research</div>
-							<div class="skill">A/B Testing</div>
-							<div class="skill">Surveys & Interviews</div>
-							<div class="skill">Task Analysis</div>-->
-							<div class="skill">Design Thinking</div>
-							<div class="skill">Agile & Lean UX</div>
-							<!--<div class="skill">User Interface (UI) Design</div>-->
-
-							<!-- Add more skills as needed -->
-						</div>
-					</div>
-					<!-- Development Skills -->
-					<div class="skill-category">
-						<h3>Development</h3>
-						<!--<div class="skill-bar" data-skill-level="90"><div class="skill-bar-inner"></div></div>-->
-						<div class="skills-list">
-							<div class="skill">Unity</div>
-							<div class="skill">C#</div>
-							<!--<div class="skill">Various HMDs (Head-Mounted Displays)</div>-->
-							<div class="skill">Haptic Devices</div>
-							<div class="skill">Rapid Prototyping</div>
-							<div class="skill">XR Dev</div>
-							<!--<div class="skill">XR Development</div>-->
-							<!--<div class="skill">Game Design</div>
-							<div class="skill">3D Modeling</div>-->
-							<div class="skill">VR Interaction Design</div>
-							<!--<div class="skill">Physics Simulation</div>
-							<div class="skill">Spatial Audio Integration</div>
-							<div class="skill">Performance Optimization</div>
-							<div class="skill">Animation Systems</div>
-							<div class="skill">Interaction Design for Immersive Environments</div>-->
-							<!-- Add more skills as needed -->
-						</div>
-					</div>
-				</div>
-			</div>
-            <div class="experience" id="exp">
-                <h2>
-                    FULL-TIME EXPERIENCE <p style="text-align: right;font-size: 0.5em;">
-                        <em>Total 1 year 8 months</em>
-                    </p>
-                </h2>
-                <div class="project-item">
-                    <img src="iisc.png" alt="Project Thumbnail">
-                    <div>
-                        <h3>
-                            Research Assistant @ Indian Institute of Science<br>
-                            <em>September 2022 - May 2023 ; April 2024 - August 2024</em>
-                        </h3>
-                        </p>
-
-                        <p>
-                            <ul>
-                                <li> Designed & Developed | Spearheaded | Demonstrated Autonomy</li>
-                            </ul>
-
-                        </p>
 
 
 
-                        <p class="see-more">
-                            See more <i class="fas fa-arrow-down"></i>
-                        </p>
-                        <div class="more-content">
-                            <ul>
-                                <li>Spearheaded the design and development of a virtual cockpit for conducting cognitive load estimation studies.</li>
-                                <li>Gained an understanding of cognitive workload assessment methods, leading to more efficient and user-centric XR design solutions.</li>
-                                <li>Engineered a versatile tool for selecting and implementing common user profiles across diverse interfaces, enhancing user experience and consistency.</li>
-                                <li>Demonstrated autonomy and initiative by leading the entire project lifecycle while incorporating guidance and feedback from the professor.</li>
-                                <li>Leveraged advanced technologies, including HTC Vive Pro Eye, Leap Motion, EMOTIV EEG headset, and eye-tracking data for user studies.</li>
-                            </ul>
-
-                            <p>Tap to see less.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-item">
-                    <img src="cryenx.png" alt="Project Thumbnail">
-                    <div>
-                        <h3>
-                            Unity SD-1 @ Cryenx Labs<br>
-                            <em>September 2022 - May 2023 ; April 2024 - August 2024</em>
-                        </h3>
-                        </p>
-
-                        <p>
-
-                            <ul>
-                                <li>Spearheaded the development of a quest-based game for collecting NFTs based on users' geolocation.</li>
-                                <li>Contributing to an existing project which serves as a 3D and Augmented Reality Viewer for viewing NFTs.</li>
-
-                            </ul>
-
-                        </p>
-
-
-
-
-                    </div>
-                </div>
-                <!--<div class="experience-item">
-        <h2>
-            <strong>Research Assistant</strong>
-        </h2>
-        <p>
-            <strong>I3D Lab, IISc, India</strong>
-        </p>
-        <ul>
-            <li>Spearheaded the design and development of a virtual cockpit for conducting cognitive load estimation studies.</li>
-            <li>Gained an understanding of cognitive workload assessment methods, leading to more efficient and user-centric XR design solutions.</li>
-            <li>Engineered a versatile tool for selecting and implementing common user profiles across diverse interfaces, enhancing user experience and consistency.</li>
-            <li>Demonstrated autonomy and initiative by leading the entire project lifecycle while incorporating guidance and feedback from the professor.</li>
-            <li>Leveraged advanced technologies, including HTC Vive Pro Eye, Leap Motion, EMOTIV EEG headset, and eye-tracking data for user studies.</li>
-        </ul>
-
-        <em>September 2022 - May 2023 ; April 2024 - August 2024</em>
-        </p>
-    </div>-->
-                <!--<div class="experience-item">
-        <h2>
-            <strong> Unity SD-1</strong>
-        </h2>
-        <p>
-            <strong>Cryenx Labs</strong>
-        </p>
-        <ul>
-            <li>Spearheaded the development of a quest-based game for collecting NFTs based on users' geolocation.</li>
-            <li>Contributing to an existing project which serves as a 3D and Augmented Reality Viewer for viewing NFTs.</li>
-
-        </ul>
-
-        <p>
-            <em>August 2023- February 2024</em>
-        </p>
-    </div>-->
-                <h2>
-                    PART-TIME / INTERNSHIP EXPERIENCE <p style="text-align: right;font-size: 0.5em;">
-                        <em>1 year 5 months</em>
-                    </p>
-                </h2>
-                <div class="project-item">
-                    <img src="iisc.png" alt="Project Thumbnail">
-                    <div>
-                        <h3>
-                            Research Intern @ Indian Institute of Science<br>
-                            <em>January 2022 - August 2022</em>
-                        </h3>
-                        </p>
-
-                        <p>
-                            <ul>
-
-                                <li>Worked on digital twin projects</li>
-                                <li>Familiarized with Oculus integration, indoor AR navigation</li>
-
-                            </ul>
-
-                        </p>
-
-
-
-
-                    </div>
-                </div>
-                <div class="project-item">
-                    <img src="cryenx.png" alt="Project Thumbnail">
-                    <div>
-                        <h3>
-                            AR Development Intern @ Cryenx Labs<br>
-                            <em>January 2022 - June 2022</em>
-                        </h3>
-                        </p>
-
-                        <p>
-                            <ul>
-                                <li>Worked on a client-based AR application where real paintings come to life on scanning, developed the gallery section and worked on app optimization in Unity.</li>
-                                <li>Researched different approaches to integrate outdoor navigation in Unity.</li>
-                                <li>Familiarized with integrating AWS Cognito and Unity Addressables.</li>
-                            </ul>
-
-
-                        </p>
-
-
-
-
-                    </div>
-                </div>
-
-                <p style="text-align: right;font-size: 0.8em;">
-                    <em>*As both internships were great opportunities, I was mutually permitted to work at both workplaces</em>
-                </p>
-
-                <div class="project-item">
-                    <img src="instancy.png" alt="Project Thumbnail">
-                    <div>
-                        <h3>
-                            XR Consultant @ Instancy Inc.<br>
-                            <em>October 2022 - December 2022</em>
-                        </h3>
-                        </p>
-
-                        <p>
-                            <ul>
-                                <li>Researched different AR/VR authoring tools for educational content creators.</li>
-                                <li>Instancy is a company building authoring tools for creators and wanted to develop a tool for XR-based content.</li>
-                                <li>Over a period of 2-3 months, I was able to research various tools available, document important features, and show demonstrations of different AR tracking methods for augmenting content.</li>
-                            </ul>
-
-
-
-                        </p>
-
-
-
-
-                    </div>
-                </div>
-
-            </div>
-			<div class="courses" id="courses-certifications">
-				<h2>COURSES & CERTIFICATIONS</h2>
-				<div class="certification-item">
-					<h3>
-						<a href="https://coursera.org/share/431b3a55128909308e3681274a6a9083" target="_blank"> Extended Reality for Everybody <span class="icon">↗</span>
-						</a>
-					</h3>
-					<p>Description: Certification demonstrating proficiency in XR development.</p>
-					<p>Platform: University of Michigan, Coursera</p>
-					<p style="text-align: right;font-size: 0.8em;">
-						<em>*Certificate</em>
-					</p>
-				</div>
-				<div class="certification-item">
-					<h3>
-						<a href="https://www.linkedin.com/posts/db1713_im-happy-to-announce-that-our-project-virtual-activity-6952240695000608768-cF5q?utm_source=share&utm_medium=member_desktop" target="_blank"> Best Projects - Runner Up for 'VR Based Stroke Rehabilitation <span class="icon">↗</span>
-						</a>
-					</h3>
-					<p>Description: Certification of Merit for my capstone project in undergrad.</p>
-					<p>Platform: Ramaiah Institute of Technology</p>
-					<p style="text-align: right;font-size: 0.8em;">
-						<em>*Certificate</em>
-					</p>
-				</div>
-				<div class="course-item">
-					<h3>
-						<a href="https://www.coursera.org/learn/intro-augmented-virtual-mixed-extended-reality-technologies-applications-issues?specialization=extended-reality-for-everybody" target="_blank"> Intro to AR/VR/MR/XR: Technologies, Applications & Issues <span class="icon">↗</span>
-						</a>
-					</h3>
-					<p>What I learnt: XR technologies, issues, challenges.</p>
-					<p>Platform: University of Michigan, Coursera</p>
-				</div>
-				<div class="course-item">
-					<h3>
-						<a href="https://www.coursera.org/learn/user-experience-interaction-design-augmented-virtual-mixed-extended-reality?specialization=extended-reality-for-everybody" target="_blank"> User Experience & Interaction Design for AR/VR/MR/XR <span class="icon">↗</span>
-						</a>
-					</h3>
-					<p>What I learnt: Design thinking mindset for AR/VR/MR/XR using rapid prototyping.</p>
-					<p>Platform: University of Michigan, Coursera</p>
-				</div>
-				<div class="course-item">
-					<h3>
-						<a href="https://www.coursera.org/learn/develop-augmented-virtual-mixed-extended-reality-applications-webxr-unity-unreal?specialization=extended-reality-for-everybody" target="_blank"> Developing AR/VR/MR/XR Apps with WebXR, Unity & Unreal <span class="icon">↗</span>
-						</a>
-					</h3>
-					<p>What I learnt: Technical mental model of XR technologies and the tools, infer advanced XR requirements from physical/digital prototypes.</p>
-					<p>Platform: University of Michigan, Coursera</p>
-				</div>
-			</div>
 			<div class="contact" id="contact">
 				<h2>GET IN TOUCH</h2>
 				<p>
@@ -1156,7 +677,7 @@
 						<i class="fab fa-github"></i> GitHub </a>
 				</p>
 				<p>
-					<a href="resume.pdf" target="_blank">
+					<a href="https://flowcv.com/resume/mbsbmhektf" target="_blank">
 						<i class="fas fa-file-pdf"></i> Resumé </a>
 				</p>
 			</div>
@@ -1166,12 +687,6 @@
             <script>AOS.init();
 
                 document.addEventListener("DOMContentLoaded", function () {
-
-                    const skillBars = document.querySelectorAll('.skill-bar-inner');
-                    const swooshSound = document.getElementById('swoosh-sound');
-                    const introSound = document.getElementById('intro-sound');
-                    const tapSound = document.getElementById('tap-sound');
-                    const scrollSound = document.getElementById('scroll-sound');
 
 
                     const bioImage = document.getElementById('bioImage');
@@ -1185,45 +700,7 @@
                     container.addEventListener('mouseleave', () => {
                         bioImage.style.transform = 'rotateY(0deg) rotateX(0deg)';
                     });
-                    // Set all skill bars to an initial width of 0
-                    skillBars.forEach(skillBar => {
-                        skillBar.style.width = '0%';
-                    });
-                    const playSwooshSound = () => {
-                        swooshSound.currentTime = 0;
-                        swooshSound.play().catch(error => {
-                            console.log('Error playing swoosh sound:', error);
-                        });
-                    };
-                    const playTapSound = () => {
-                        tapSound.currentTime = 0;
-                        tapSound.play().catch(error => {
-                            console.log('Error playing tap sound:', error);
-                        });
-                    };
-                    const playScrollSound = () => {
-                        scrollSound.currentTime = 0;
-                        scrollSound.play().catch(error => {
-                            console.log('Error playing scroll sound:', error);
-                        });
-                    };
-                    const observer = new IntersectionObserver(entries => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                const skillBar = entry.target.querySelector('.skill-bar-inner');
-                                const skillLevel = entry.target.getAttribute('data-skill-level');
-                                skillBar.style.width = skillLevel + '%';
-                                observer.unobserve(entry.target); // Stop observing once animation is triggered
-                                playSwooshSound();
-                            }
-                        });
-                    }, {
-                        threshold: 0.1
-                    });
-                    // Observe each skill bar container
-                    document.querySelectorAll('.skill-bar').forEach(skill => {
-                        observer.observe(skill);
-                    });
+
                     const projectItems = document.querySelectorAll('.project-item');
                     projectItems.forEach(item => {
                         item.addEventListener('click', () => {
@@ -1236,31 +713,6 @@
                             }
                         });
                     });
-                    const toggleVibes = document.getElementById('toggle-vibes');
-                    toggleVibes.addEventListener('click', function () {
-                        introSound.play().catch(error => {
-                            console.log('Error playing intro sound:', error);
-                        });
-                        toggleVibes.style.display = 'none';
-                    });
-                    document.querySelectorAll('a, .project-item').forEach(element => {
-                        element.addEventListener('click', playTapSound);
-                    });
-                    let isScrolling;
-                    window.addEventListener('scroll', function () {
-                        if (!scrollSound.paused) {
-                            scrollSound.currentTime = 0; // Loop the sound
-                        } else {
-                            playScrollSound();
-                        }
-                        window.clearTimeout(isScrolling);
-                        isScrolling = setTimeout(function () {
-                            // Scrolling has stopped
-                            scrollSound.pause();
-                            scrollSound.currentTime = 0; // Reset the sound
-                        }, 100);
-                    });
-
 
                 });
 
@@ -1341,15 +793,6 @@
 
                 // Initialize and start animation
                 init();
-                animate();
-
-
-
-
-
-
-
-
-            </script>
+                animate();</script>
 </body>
 </html>
