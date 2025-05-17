@@ -1,0 +1,1107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinesh Bhathad</title>
+    <a href="#top" id="fab">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bruno+Ace+SC&family=Bungee+Hairline&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&family=Silkscreen:wght@400;700&display=swap');
+
+        canvas {
+            display: block ;
+            position:absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Canvas behind the panels */
+        }
+
+      
+
+        #fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            border-radius: 50%;
+            border: 2px solid black;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+
+            #fab:hover {
+                background-color: grey;
+                transform: translateY(-10px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            }
+
+        html {
+            scroll-behavior: smooth;
+            /* Smooth scrolling */
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'Chakra Petch', sans-serif;
+            background-color: white;
+            color: black;
+            overflow-x: hidden;
+            font-size: 18px;
+            letter-spacing: 0.05em;
+            padding-top: 100px;
+            /* Add padding to avoid content being hidden under fixed header */
+        }
+
+        header {
+            /*background-color: #1a1a1a;*/
+
+            background-color: white;
+            color: black;
+            padding: 12px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+            header h1 {
+                color: black;
+                margin: 0;
+                font-size: 3em;
+                text-shadow: 0 0 0px #0d0d0d, 0 0 0px #0d0d0d, 0 0 0px #0d0d0d;
+                transition: font-size 0.3s ease;
+            }
+
+                header h1:hover {
+                    color: black;
+                    font-size: 3.5em;
+                }
+
+            header p {
+                margin: 5px 0 0;
+                font-size: 1.2em;
+                transition: font-size 0.3s ease;
+            }
+
+                header p:hover {
+                    font-size: 1.4em;
+                }
+
+        nav {
+            margin-top: 10px;
+        }
+
+            nav a {
+                color: black;
+                margin: 0 10px;
+                text-decoration: none;
+                font-size: 1.8em;
+            }
+
+                nav a:hover {
+                    font-size: 2em;
+                    color: black;
+                    
+                }
+
+        .container {
+            width: 100%;
+            /* Changed from 80% to 100% */
+            padding: 0 10px;
+            /* Add padding to maintain spacing */
+            margin: 20px auto;
+            max-width: 1200px;
+            padding-bottom: 50px;
+            /* Ensure space for the footer */
+        }
+
+        .bio,
+        .highlights,
+        .projects,
+        .contact,
+        .skills,
+        .experience,
+        .courses,
+        .certifications {
+            margin: 20px 0;
+        }
+
+            .bio h2,
+            .highlights h2,
+            .projects h2,
+            .contact h2,
+            .skills h2,
+            .experience h2,
+            .courses h2,
+            .certifications h2 {
+                color: black;
+                text-align: left;
+                transition: font-size 0.3s ease;
+            }
+
+                /*.bio h2:hover,
+                .highlights h2:hover,
+                .projects h2:hover,
+                .contact h2:hover,
+                .skills h2:hover,
+                .experience h2:hover,
+                .courses h2:hover,
+                .certifications h2:hover {
+                    font-size: 2.5em;
+                }*/
+
+        .bio-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .bio-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding-right: 145px;
+            padding-left: 145px;
+            perspective: 1000px;
+            /* Required for the 3D effect */
+        }
+
+            .bio-image img {
+                border-radius: 50%;
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                border: 2px solid black;
+                animation: borderGrow 1s ease-in-out;
+                transition: transform 0.5s ease-out;
+                transform-style: preserve-3d;
+                /* Ensures the 3D effect is applied */
+            }
+
+        @keyframes borderGrow {
+            0% {
+                border-width: 2px;
+            }
+
+            50% {
+                border-width: 10px;
+            }
+
+            100% {
+                border-width: 2px;
+            }
+        }
+
+        .bio p,
+        .highlight-item h3,
+        .highlight-item p,
+        .project-item h3,
+        .project-item p,
+        .contact p,
+        a,
+        .course-item h3,
+        .course-item p,
+        .certification-item h3,
+        .certification-item p {
+            text-align: left;
+            transition: font-size 0.3s ease;
+        }
+
+        /*  .bio p:hover,
+            .highlight-item h3:hover,
+            .highlight-item p:hover,
+            .project-item h3:hover,
+            .project-item p:hover,
+            .contact p:hover,
+            a:hover,
+            .course-item h3:hover,
+            .course-item p:hover,
+            .certification-item h3:hover,
+            .certification-item p:hover {
+
+                font-size: 1.2em;
+            }*/
+
+        .highlight-items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        
+        .highlight-item,
+        .project-item,
+        .experience-item,
+        .course-item,
+        .certification-item {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255,255,255, 0.1);
+           
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.1px solid #0d0d0d;
+        }
+
+            
+            .highlight-item:hover,
+            .project-item:hover,
+            .experience-item:hover,
+            .course-item:hover,
+            .certification-item:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+            }
+
+        .highlight-item {
+            flex: 1 1 calc(33% - 20px);
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+            .highlight-item:last-child {
+                margin-right: 0;
+            }
+
+        .project-item img {
+            width: 150px;
+            height: auto;
+            border-radius: 20px;
+            margin-right: 20px;
+            margin-top: 25px;
+            position: sticky;
+            top: 50px;
+        }
+
+        .project-item {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            position: relative;
+        }
+
+            .project-item .more-content {
+                display: none;
+                margin-top: 20px;
+            }
+
+            .project-item.expanded .more-content {
+                display: block;
+            }
+
+            .project-item.expanded .see-more {
+                display: none;
+            }
+
+        .more-content img {
+            width: 30%;
+            /* Ensure images fit within their container */
+            height: auto;
+            /* Maintain aspect ratio */
+            margin-right: 10px;
+            border-radius: 8px;
+        }
+
+        .skills .skill-category {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255,255,255, 0.1);
+            margin-bottom: 30px;
+            margin-top: 10px;
+           
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            border: 0.1px solid #0d0d0d;
+        }
+
+            .skills .skill-category:hover {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+                transform: translateY(-10px);
+            }
+
+            .skills .skill-category h3 {
+                font-size: 1.5em;
+                margin-top: 1px;
+                margin-bottom: 15px;
+                color: black;
+            }
+
+            .skills .skill-category .skill-bar {
+                background-color: #000;
+                border-radius: 8px;
+                overflow: hidden;
+                position: relative;
+                height: 20px;
+                margin-bottom: 15px;
+            }
+
+            .skills .skill-category .skill-bar-inner {
+                background-color: #00ffcc;
+                height: 100%;
+                width: 0%;
+                transition: width 5s ease;
+            }
+
+            .skills .skill-category .skill-bar[data-skill-level="90"] .skill-bar-inner {
+                width: 90%;
+            }
+
+            .skills .skill-category .skill-bar[data-skill-level="85"] .skill-bar-inner {
+                width: 85%;
+            }
+
+            .skills .skill-category .skill-bar[data-skill-level="80"] .skill-bar-inner {
+                width: 80%;
+            }
+
+        .skills .skills-list {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(2, 1fr);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+            .skills .skills-list .skill {
+                background-color: #212121;
+                border: 1px solid black;
+                border-radius: 12px;
+                padding: 5px 20px;
+                font-size: 1em;
+                color: white;
+                text-align: center;
+                
+                transition: background-color 0.3s ease;
+                
+            }
+
+          
+        .icon {
+            margin-left: 8px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: black;
+               /* text-shadow: 0 0 10px #808080;*/
+            }
+
+        @media (max-width: 768px) {
+            .highlight-item {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .highlight-item {
+                flex: 1 1 100%;
+            }
+
+            .project-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+                .project-item img {
+                    margin-bottom: 10px;
+                    width: 100%;
+                    /* Ensure images fit within their container */
+                }
+
+            .bio-content {
+                flex-direction: column;
+            }
+
+            .bio-image {
+                margin-top: 20px;
+            }
+        }
+
+        .toggle-vibes {
+            cursor: pointer;
+            color: #00ffcc;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .bio,
+        .highlights,
+        .projects,
+        .contact,
+        .skills,
+        .experience,
+        .courses,
+        .certifications {
+            margin: 20px 0;
+            scroll-margin-top: 120px;
+            /* Adjust this value based on your header height */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+
+
+    <header>
+        <nav>
+            <a href="#what-we-designed">Low Fidelity</a>
+            <a href="#high-fidelity-designs">High Fidelity</a>
+            <a href="#features">Features</a>
+            <a href="#reflection">Reflection</a>
+        </nav>
+    </header>
+
+    </nav>
+    <div class="container">
+        <div class="bio" id="about-me">
+            <h2>Designing for Independence: Smart Cane and Mobile App for Abby</h2>
+            <div data-aos="zoom-in" ; <div class="bio-content">
+            <div class="bio-image">
+            <img src="cane.png" alt="Your Headshot" id="bioImage">
+            </div>
+            <div class="bio-text">
+            <h2 style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: center; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); " id="typewriter"></h2>
+            <script>const text = "Combating Dysautonomia and Neurodivergence Together";
+            let index = 0;
+
+            function type() {
+            if (index < text.length) {
+            document.getElementById('typewriter').innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 100);
+            }
+            }
+            type();</script>
+            <p style="backdrop-filter: blur(5px); background-color: rgba(255,255,255, 0.1); padding: 10px; text-align: justify; border-radius: 20px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+                <b style=" color: black;">Background:</b><br>
+                Abby is a college student living with multiple conditions: ADHD, dyslexia, Hashimoto’s disease, and POTS (Postural Orthostatic Tachycardia Syndrome). She frequently experiences fatigue, dizziness, and heart rate spikes that disrupt her daily routine. Her current heart rate trackers are insufficient, as they lack context and overwhelm her with cluttered UIs.
+
+                Our project goal was to create an access technology system that gives Abby real-time support, personalized insight into her health, and better control over her condition—while keeping cognitive load minimal.
+
+            </p>
+
+
+            </div>
+            </div>
+            </div>
+            <div data-aos="zoom-in" class="highlights" id="highlights">
+                <h2>ROLE & DESIGN GOALS</h2>
+                <div class="highlight-items">
+
+
+                    <div class="highlight-item">
+                        <h3>
+                            <a>
+                                Role
+                            </a>
+                        </h3>
+                        <p>My role involved multiple responsibilities:</p>
+                        <ul>
+                            <li><strong>User Interview:</strong> Conducted detailed interviews with Abby to understand her real-world challenges and needs.</li>
+                            <li><strong>Concept Development:</strong> Conceptualized the smart cane hardware solution tailored to POTS and accessibility needs.</li>
+                            <li><strong>UI/UX Design:</strong> Designed mid-fidelity screens for both mobile and watch interfaces using Figma.</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h3>
+                            <a>
+                                Design Goals
+                            </a>
+                        </h3>
+                        <ol>
+                            <li>
+                                <strong>Understand Triggers:</strong> Help users see what caused their heart rate spikes.
+                            </li>
+                            <li>
+                                <strong>Keep it Simple:</strong> Use clear, easy-to-read designs for people with ADHD and dyslexia.
+                            </li>
+                            <li>
+                                <strong>Always Be Ready:</strong> Let users rely on a smart cane, watch, or phone—whichever they have on hand.
+                            </li>
+                            <li>
+                                <strong>Learn and Suggest:</strong> Use past data to offer helpful tips for managing episodes.
+                            </li>
+                            <li>
+                                <strong>Act Fast:</strong> Make it easy to get alerts, log data, or ask for help with just a tap.
+                            </li>
+                        </ol>
+                    </div>
+
+
+
+                </div>
+                <div data-aos="zoom-in" ; <div class="highlights" id="highlights">
+    <h2>USER PAIN POINTS</h2>
+    <div class="highlight-items">
+        <div class="highlight-item">
+            <h3>
+                <a>
+                    Overwhelming Interfaces
+                </a>
+            </h3>
+            <p>Abby gets easily overwhelmed by cluttered UIs and frequent pop-ups, which make it hard for her to focus or take action quickly.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a>
+                    Lacks Helpful Context
+                </a>
+            </h3>
+            <p>Current heart rate trackers only show raw data and miss important context about what caused the spikes, leaving Abby confused.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a>
+                    Misses Notifications
+                </a>
+            </h3>
+            <p>Visual alerts alone don’t work well for Abby—she often misses them, especially when multitasking or fatigued.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a>
+                    Reading Challenges
+                </a>
+            </h3>
+            <p>Due to dyslexia, Abby struggles with reading and typing in apps that don’t support large text or clean layouts.</p>
+        </div>
+    </div>
+</div>
+
+                <h2>BASED OFF OUR PERSONA...</h2>
+                <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: auto; padding: 0;">
+                    <img src="abby.png" alt="Centered Image" style="max-width: 80%; height: auto; display: block; padding: 0; margin: 0;">
+                </div>
+
+
+            </div>
+
+
+
+
+
+                <div data-aos="zoom-in" ; <div class="highlights" id="what-we-designed">
+    <h2>WHAT WE DESIGNED</h2>
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; width: 100%; padding: 0; gap: 10px;">
+        <img src="lowfid.jpeg" alt="Low Fidelity Screen" style="width: 32%; height: auto; object-fit: contain; display: block; border-radius: 12px;">
+        <img src="canelow.jpeg" alt="Cane Low Fidelity 1" style="width: 32%; height: auto; object-fit: contain; display: block; border-radius: 12px;">
+        <img src="canelow2.jpeg" alt="Cane Low Fidelity 2" style="width: 26%; height: auto; object-fit: contain; display: block; border-radius: 12px;">
+    </div>
+                    </div>
+    <div data-aos="zoom-in" ; <div class="highlights" id="highlights">
+    <h2>IN-CLASS CRITIQUE & CHANGES MADE</h2>
+    <div class="highlight-items">
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-running" style="margin-right: 8px;"></i> Desire for Live Activity Tracking</a>
+            </h3>
+            <p>Classmates emphasized the importance of real-time tracking of Abby’s current state—whether she’s walking, sitting, running, or sleeping.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-mobile-alt" style="margin-right: 8px;"></i> Feedback on Modality Shift</a>
+            </h3>
+            <p>We were challenged on requiring users to constantly check their phone. The critique prompted a stronger focus on mobile and watch interfaces instead of relying solely on the phone.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-cane" style="margin-right: 8px;"></i> Clarifying Cane Use Experience</a>
+            </h3>
+            <p>The audience asked whether Abby liked the cane. While she didn’t dislike it, we confirmed it was an extra item to carry—thus requiring a design that felt lightweight and discreet.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-lightbulb" style="margin-right: 8px;"></i> Problem Statement Refinement</a>
+            </h3>
+            <p>We received critique that our original problem statement lacked focus. We revised it to highlight specific pain points in Abby’s current experience and how our prototype solves them with a clear user flow.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-pencil-ruler" style="margin-right: 8px;"></i> UI Enhancements from Low Fidelity</a>
+            </h3>
+            <p>We upgraded our mobile screens to support more meaningful task execution and added richer context to the home screen, guided by initial secondary research.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-check-circle" style="margin-right: 8px;"></i> Validating the Cane Design</a>
+            </h3>
+            <p>We spoke with Abby to understand her past experience with canes. She appreciated the collapsible version we proposed due to its discreet form and integrated health tracking.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-compress-arrows-alt" style="margin-right: 8px;"></i> Final Scope Refinement</a>
+            </h3>
+            <p>Based on feedback, we narrowed our problem space and aligned our design more closely with Abby’s personal challenges and expectations.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Font Awesome CDN (include once in your file) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+                    <h2>HIGH FIDELITY DESIGNS</h2>
+    <div id="high-fidelity-designs" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; width: 100%; padding: 0; gap: 10px;">
+        <img src="highfid.png" alt="Low Fidelity Screen" style="width: 80%; height: auto; object-fit: contain; display: block; border-radius: 12px;">
+
+    </div>
+                    <h2>CANE DESIGN</h2>
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; width: 100%; padding: 0; gap: 10px;">
+        <img src="cane.png" alt="Low Fidelity Screen" style="width: 80%; height: auto; object-fit: contain; display: block; border-radius: 12px;">
+
+    </div>
+
+                              <div data-aos="zoom-in" ; <div class="projects" id="features">
+    <h2>FEATURE HIGHLIGHTS</h2>
+
+    <div class="project-item">
+        <img src="cane.png" alt="Smart Cane Thumbnail">
+        <div>
+            <h3 style=" color: black;">Smart Cane</h3>
+            <p>A collapsible mobility aid that’s easy to carry and packed with health tech.</p>
+            <ul>
+                <li><b>Collapsible:</b> Easily fits into a bag when not in use.</li>
+                <li><b>Heart Rate Sensor:</b> Built into the handle, similar to treadmill grips.</li>
+                <li><b>Fall Detection:</b> Detects fainting episodes while in use.</li>
+                <li><b>Haptic Alerts:</b> Vibrates to warn Abby of oncoming episodes.</li>
+                <li><b>Medicine Storage:</b> Quick-access compartments for emergency meds.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="project-item">
+        <img src="highfid.png" alt="Phone App Thumbnail">
+        <div>
+            <h3 style=" color: black;">Phone App</h3>
+            <p>iOS-native app that supports Abby with real-time alerts and detailed episode logging.</p>
+            <ul>
+                <li><b>Alerts:</b> Subtle system-style vibration notifications during spikes.</li>
+                <li><b>Quick Actions:</b> Options to log the episode, dismiss as false positive, or call for help.</li>
+                <li><b>Support Screen:</b> Helps nearby people assist Abby during an episode.</li>
+                <li><b>Logging:</b> Records symptoms, activity, mood, medications, and notes.</li>
+                <li><b>Design Language:</b> Follows iOS conventions for familiarity and comfort.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="project-item">
+        <img src="heart.png" alt="Insights Thumbnail">
+        <div>
+            <h3 style=" color: black;">Personalized Insights</h3>
+            <p>Helps Abby make informed choices using pattern recognition and suggestions.</p>
+            <ul>
+                <li><b>Machine Learning:</b> Learns from Abby’s data to identify patterns.</li>
+                <li><b>Behavioral Suggestions:</b> Provides tips on avoiding triggers or adjusting routines.</li>
+                <li><b>Health Trends:</b> Helps Abby reflect on how actions influence symptoms.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+               <!-- USER FEEDBACK SECTION -->
+<div data-aos="zoom-in" ; <div class="highlights" id="feedback">
+    <h2>USER FEEDBACK</h2>
+    <div class="highlight-items">
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-walking" style="margin-right: 8px;"></i> Dual-Purpose Cane</a>
+            </h3>
+            <p>Abby appreciated the collapsible cane not just for mobility, but also for its health-tracking features.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-sync-alt" style="margin-right: 8px;"></i> Device Flexibility</a>
+            </h3>
+            <p>She liked having fallback options like the watch and phone in case she forgot one.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-eye" style="margin-right: 8px;"></i> Intuitive Design</a>
+            </h3>
+            <p>The overall interface was described as clear, accessible, and non-intrusive.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-times-circle" style="margin-right: 8px;"></i> False Positive Control</a>
+            </h3>
+            <p>She appreciated being able to dismiss false alerts, which helped reduce anxiety.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- FUTURE WORK SECTION -->
+                          <div data-aos="zoom-in" ; <div class="highlights" id="future-work">
+    <h2>FUTURE WORK</h2>
+    <div class="highlight-items">
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-vial" style="margin-right: 8px;"></i> Final Testing</a>
+            </h3>
+            <p>We plan to test the full system with Abby again to evaluate its completeness and usability.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-user-md" style="margin-right: 8px;"></i> Expert Review</a>
+            </h3>
+            <p>We will consult healthcare professionals for clinical and medical validation of the solution.</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>
+                <a><i class="fas fa-users" style="margin-right: 8px;"></i> Generalization</a>
+            </h3>
+            <p>Future versions will aim to support others with chronic or autoimmune conditions, not just POTS.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+
+
+
+
+
+              <div data-aos="zoom-in" ; div class="skills" id="tools">
+    <h2>TOOLS & VISUALIZATIONS</h2>
+
+    <!-- Tools Used -->
+    <div class="skills">
+        <div class="skill-category">
+            <h3>TOOLS</h3>
+            <div class="skills-list">
+                <div class="skill">Figma</div>
+                <div class="skill">FigJam</div>
+                <div class="skill">Apple Human Interface Guidelines (Figma Kit)</div>
+                <div class="skill">Sora for Cane Prototyping</div>
+                <div class="skill">Google Sheets (for data collection & tracking)</div>
+            </div>
+        </div>
+
+        <!-- Methods & Visualization -->
+        <div class="skill-category">
+            <h3>METHODS & VISUALIZATION</h3>
+            <div class="skills-list">
+                <div class="skill">In-Depth Interviews</div>
+
+                <div class="skill">Affinity Mapping</div>
+
+                <div class="skill">Iterative Design Based on Peer Critique</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+              <div data-aos="zoom-in" ; <div class="projects" id="reflection">
+    <h2>MY PERSONAL REFLECTION</h2>
+
+    <div class="project-item">
+        <img src="https://img.icons8.com/color/96/design--v1.png" alt="Sketching Icon">
+        <div>
+            <h3 style="color: black;">Applying Sketching & HCI Evaluation Techniques</h3>
+            <p>I learned how to blend HCI principles and sketching in real design work. My initial ideas overlooked accessibility, but redesigning a cane helped me integrate tech across domains into something truly functional.</p>
+            <ul>
+                <li><b>Favorite Task:</b> Smart cane design using variable motor ability insights.</li>
+                <li><b>Evaluation Skill:</b> Adopted POUR accessibility framework for inclusive analysis.</li>
+                <li><b>Mindset Shift:</b> I now evaluate everyday objects for inclusivity—UI layouts, ramps, signage, even phone texture and button placement.</li>
+                <li><b>Curiosity:</b> I'm interested in how these principles apply to virtual worlds, not just physical or digital interfaces.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="project-item">
+        <img src="https://img.icons8.com/color/96/conference-call--v1.png" alt="Interview Icon">
+        <div>
+            <h3 style="color: black;">Inclusive Research & Interviewing</h3>
+            <p>Interviewing Abby was my first time speaking with someone with a disability that causes episodic challenges (POTS). This raised the stakes and shaped my understanding of inclusive design with real-world empathy.</p>
+            <ul>
+                <li><b>Challenge:</b> Being empathetic, using appropriate terminology, and active listening.</li>
+                <li><b>Growth:</b> Observing and asking follow-up questions across two teams made me more adaptive and sensitive.</li>
+                <li><b>Perspective:</b> I now understand how diverse life is for people with disabilities, especially invisible ones.</li>
+                <li><b>Surprise Element:</b> Learned how people creatively 'alt-use' tech beyond its intended design.</li>
+                <li><b>Future Goal:</b> Spend more time with individuals with disabilities to recognize subtle pain points through observation and shared experience.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="project-item">
+        <img src="https://img.icons8.com/color/96/virtual-reality.png" alt="VR Future Icon">
+        <div>
+            <h3 style="color: black;">The Future of Assistive Tech Research</h3>
+            <p>In the next 10 years, assistive VR will likely evolve toward personalized, sensory-rich experiences for people with diverse disabilities—through adaptive interfaces, inclusive avatars, and more natural interactions.</p>
+            <ul>
+                <li><b>Adaptation:</b> Environments that change based on real-time user needs.</li>
+                <li><b>Multisensory Experiences:</b> Richer tactile, auditory, and visual feedback for inclusivity.</li>
+                <li><b>Representation:</b> Emphasis on fair and empowering identity through avatar design and storytelling.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="project-item">
+        <img src="https://img.icons8.com/color/96/idea.png" alt="Learning Icon">
+        <div>
+            <h3 style="color: black;">Most Significant Learning Experience</h3>
+            <p>This course helped me unlearn old habits and opened my eyes to the potential of accessible-first design. Sometimes doing things differently is better—not just ethically, but functionally and commercially.</p>
+            <ul>
+                <li><b>Key Insight:</b> Accessible design can lead to smarter, more useful products for everyone.</li>
+                <li><b>Example:</b> AirPods as medical hearing aids—design with purpose expands reach.</li>
+                <li><b>Mindset Shift:</b> I no longer see accessibility as a checklist, but as a creative opportunity.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+                <div class="contact" id="contact">
+                <h2>GET IN TOUCH</h2>
+
+                <p>
+                <a href="mailto:dineshbhathad1713@gmail.com">
+                <i class="fas fa-envelope"></i> dineshbhathad1713@gmail.com
+                </a>
+                </p>
+                <p>
+                <a href="https://www.linkedin.com/in/db1713/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                </p>
+                <p>
+                <a href="https://github.com/db1713" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+                </a>
+                </p>
+                <p>
+                <a href="resume.pdf" target="_blank">
+                <i class="fas fa-file-pdf"></i> Resumé
+                </a>
+                </p>
+                </div>
+                </div>
+                </div>
+                <footer> &copy; 2024 Dinesh Bhathad. All rights reserved. </footer>
+                <script>AOS.init();
+
+                document.addEventListener("DOMContentLoaded", function () {
+
+                const skillBars = document.querySelectorAll('.skill-bar-inner');
+                const swooshSound = document.getElementById('swoosh-sound');
+                const introSound = document.getElementById('intro-sound');
+                const tapSound = document.getElementById('tap-sound');
+                const scrollSound = document.getElementById('scroll-sound');
+
+
+                const bioImage = document.getElementById('bioImage');
+                const container = document.querySelector('.bio-image');
+                container.addEventListener('mousemove', (event) => {
+                const containerRect = container.getBoundingClientRect();
+                const xAxis = (containerRect.width / 2 + event.clientX + containerRect.left) / 5;
+                const yAxis = (containerRect.height / 2 - event.clientY + containerRect.top) / 5;
+                bioImage.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+                });
+                container.addEventListener('mouseleave', () => {
+                bioImage.style.transform = 'rotateY(0deg) rotateX(0deg)';
+                });
+                // Set all skill bars to an initial width of 0
+
+                const projectItems = document.querySelectorAll('.project-item');
+                projectItems.forEach(item => {
+                item.addEventListener('click', () => {
+                item.classList.toggle('expanded');
+                if (!item.classList.contains('expanded')) {
+                item.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center' // Ensures the item scrolls to the center of the viewport
+                });
+                }
+                });
+                });
+                const toggleVibes = document.getElementById('toggle-vibes');
+                toggleVibes.addEventListener('click', function () {
+                introSound.play().catch(error => {
+                console.log('Error playing intro sound:', error);
+                });
+                toggleVibes.style.display = 'none';
+                });
+                document.querySelectorAll('a, .project-item').forEach(element => {
+                element.addEventListener('click', playTapSound);
+                });
+                let isScrolling;
+                window.addEventListener('scroll', function () {
+                if (!scrollSound.paused) {
+                scrollSound.currentTime = 0; // Loop the sound
+                } else {
+                playScrollSound();
+                }
+                window.clearTimeout(isScrolling);
+                isScrolling = setTimeout(function () {
+                // Scrolling has stopped
+                scrollSound.pause();
+                scrollSound.currentTime = 0; // Reset the sound
+                }, 100);
+                });
+
+
+                });
+
+                const canvas = document.getElementById('particleCanvas');
+                const ctx = canvas.getContext('2d');
+
+                // Set canvas to fill the window
+                canvas.width = window.innerWidth;
+                canvas.height = document.body.scrollHeight;
+
+                // Particle object definition
+                class Particle {
+                constructor(x, y, size, speedX, speedY) {
+                this.x = x;
+                this.y = y;
+                this.size = size;
+                this.speedX = speedX;
+                this.speedY = speedY;
+                }
+
+                // Draw a circle representing the particle
+                draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                ctx.fill();
+                }
+
+                // Update particle position and check boundaries
+                update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Bounce from edges
+                if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                this.speedX = -this.speedX;
+                }
+                if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                this.speedY = -this.speedY;
+                }
+
+                this.draw();
+                }
+                }
+
+                // Array to hold all particles
+                const particlesArray = [];
+
+                // Create particles
+                function init() {
+                particlesArray.length = 0; // Clear the array first
+                const numberOfParticles = 200;
+
+                for (let i = 0; i < numberOfParticles; i++) {
+                const size = Math.random() * 5 + 1;
+                const x = Math.random() * (canvas.width - size * 2) + size;
+                const y = Math.random() * (canvas.height - size * 2) + size;
+                const speedX = (Math.random() * 0.5) - 0.25;
+                const speedY = (Math.random() * 0.5) - 0.25;
+
+                particlesArray.push(new Particle(x, y, size, speedX, speedY));
+                }
+                }
+
+                // Animation loop
+                function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particlesArray.forEach(particle => particle.update());
+                requestAnimationFrame(animate);
+                }
+
+                // Resize canvas if window size changes
+                window.addEventListener('resize', function () {
+                canvas.width = window.innerWidth;
+                canvas.height = display.body.scrollHeight;
+                init(); // Reinitialize particles to fit new canvas size
+                });
+
+                // Initialize and start animation
+                init();
+                animate();
+
+
+
+
+
+
+
+
+                </script>
+</body>
+</html>
